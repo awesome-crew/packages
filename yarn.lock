@@ -65,6 +65,7 @@ __metadata:
     "@faker-js/faker": "npm:^8.4.1"
     "@jest/globals": "npm:^29.7.0"
     "@nestjs/common": "npm:^10.3.3"
+    "@nestjs/core": "npm:^10.3.3"
     class-transformer: "npm:^0.5.1"
     class-validator: "npm:^0.14.1"
     date-fns-tz: "npm:^2.0.0"
