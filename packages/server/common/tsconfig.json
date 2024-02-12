@@ -3,6 +3,7 @@
   "compilerOptions": {
     "outDir": "./dist",
     "strictPropertyInitialization": false,
+    "emitDecoratorMetadata": true,
     "declaration": true
   },
   "include": ["src"]
