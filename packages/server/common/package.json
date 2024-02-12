@@ -1,6 +1,6 @@
 {
   "name": "@awesome-dev/server-common",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/index.js",
   "scripts": {
     "check:lint": "yarn run -T eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
