@@ -4,7 +4,10 @@
     "check:lint": "yarn run -T eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "check:type": "yarn run -T tsc --noEmit",
     "check:test": "yarn run -T jest",
-    "check": "yarn run -T run-p 'check:*'"
+    "check": "yarn run -T run-p 'check:*'",
+    "build": "yarn run -T rimraf -rf dist && yarn run -T tsc -p tsconfig.json",
+    "prepublish:npm": "yarn check && yarn build",
+    "publish:npm": "yarn npm publish --public"
   },
   "devDependencies": {
     "@awesome-dev/jest": "workspace:^",

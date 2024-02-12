@@ -48,6 +48,7 @@ const RAW_RUNTIME_STATE =
           ["jest-environment-jsdom", "virtual:bae28cb79c047adc1c696f5d5bcc5e3a895d46be22ce4fb4213204fb9d072f3376576e4a235c53cd498954a9e10f6a53fd72e8fae363e92d9f1ae7720a6ee042#npm:29.7.0"],\
           ["npm-run-all", "npm:4.1.5"],\
           ["prettier", "npm:3.2.5"],\
+          ["rimraf", "npm:5.0.5"],\
           ["ts-jest", "virtual:bae28cb79c047adc1c696f5d5bcc5e3a895d46be22ce4fb4213204fb9d072f3376576e4a235c53cd498954a9e10f6a53fd72e8fae363e92d9f1ae7720a6ee042#npm:29.1.2"],\
           ["ts-node", "virtual:bae28cb79c047adc1c696f5d5bcc5e3a895d46be22ce4fb4213204fb9d072f3376576e4a235c53cd498954a9e10f6a53fd72e8fae363e92d9f1ae7720a6ee042#npm:10.9.2"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
@@ -7800,6 +7801,7 @@ const RAW_RUNTIME_STATE =
           ["jest-environment-jsdom", "virtual:bae28cb79c047adc1c696f5d5bcc5e3a895d46be22ce4fb4213204fb9d072f3376576e4a235c53cd498954a9e10f6a53fd72e8fae363e92d9f1ae7720a6ee042#npm:29.7.0"],\
           ["npm-run-all", "npm:4.1.5"],\
           ["prettier", "npm:3.2.5"],\
+          ["rimraf", "npm:5.0.5"],\
           ["ts-jest", "virtual:bae28cb79c047adc1c696f5d5bcc5e3a895d46be22ce4fb4213204fb9d072f3376576e4a235c53cd498954a9e10f6a53fd72e8fae363e92d9f1ae7720a6ee042#npm:29.1.2"],\
           ["ts-node", "virtual:bae28cb79c047adc1c696f5d5bcc5e3a895d46be22ce4fb4213204fb9d072f3376576e4a235c53cd498954a9e10f6a53fd72e8fae363e92d9f1ae7720a6ee042#npm:10.9.2"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
@@ -8393,6 +8395,14 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["rimraf", "npm:3.0.2"],\
           ["glob", "npm:7.2.3"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:5.0.5", {\
+        "packageLocation": "../../../../.yarn/berry/cache/rimraf-npm-5.0.5-19228633fd-10c0.zip/node_modules/rimraf/",\
+        "packageDependencies": [\
+          ["rimraf", "npm:5.0.5"],\
+          ["glob", "npm:10.3.10"]\
         ],\
         "linkType": "HARD"\
       }]\
