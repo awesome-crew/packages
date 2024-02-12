@@ -3,8 +3,7 @@ export const getRandomIntBetween = (min: number, max: number): number => {
   return Math.round(Math.max(min, Math.min(num, max)));
 };
 
-export const shuffleArray = <T = unknown>(arr: T[]): T[] =>
-  arr.sort(() => Math.random() - 0.5);
+export const shuffleArray = <T = unknown>(arr: T[]): T[] => arr.sort(() => Math.random() - 0.5);
 
 export const getRandomEle = <T = unknown>(arr: T[]): T =>
   arr[Math.floor(Math.random() * arr.length)];
@@ -12,23 +11,19 @@ export const getRandomEle = <T = unknown>(arr: T[]): T =>
 type UnknownEnum = Record<string, unknown>;
 
 export const getEnumValues = (input: UnknownEnum) =>
-  Object.values(input).filter((value) => typeof value === "string");
+  Object.values(input).filter(value => typeof value === 'string');
 
 /** get random value of given enum. except given excludes array */
-export const getRandomEnumValue = <T extends UnknownEnum>(
-  input: T,
-  excludes: (keyof T)[] = [],
-) => {
+export const getRandomEnumValue = <T extends UnknownEnum>(input: T, excludes: (keyof T)[] = []) => {
   const valuesExcept = getEnumValues(input).filter(
-    (value) => excludes.indexOf(value as keyof T) === -1,
+    value => excludes.indexOf(value as keyof T) === -1
   );
   return getRandomEle(valuesExcept);
 };
 
 export const getRandomString = (length = 6): string => {
-  let result = "";
-  const characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let result = '';
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   for (let i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * characters.length));
   }
@@ -44,5 +39,5 @@ const s12 = () => s8() + s4();
 
 /** return random uuid */
 export const getRandomUuid = () => {
-  return [s8(), s4(), s4(), s4(), s12()].join("-");
+  return [s8(), s4(), s4(), s4(), s12()].join('-');
 };

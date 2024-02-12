@@ -1,14 +1,11 @@
-import { createParamDecorator, ExecutionContext } from "@nestjs/common";
-import type { FindManyOptions, FindOptionsWhere } from "typeorm";
+import { createParamDecorator, ExecutionContext } from '@nestjs/common';
+import type { FindManyOptions, FindOptionsWhere } from 'typeorm';
 
-import { parseFilter } from "../helpers";
+import { parseFilter } from '../helpers';
 
 export const ListOptionsQuery = <Entity>(options?: { excludes?: string[] }) =>
   createParamDecorator(
-    async (
-      _data: unknown,
-      ctx: ExecutionContext,
-    ): Promise<ListOptions<Entity>> => {
+    async (_data: unknown, ctx: ExecutionContext): Promise<ListOptions<Entity>> => {
       const { query } = ctx.switchToHttp().getRequest();
       const { offset, limit, order, ...where } = query;
 
@@ -26,12 +23,10 @@ export const ListOptionsQuery = <Entity>(options?: { excludes?: string[] }) =>
           limit,
         })
         .order(order);
-    },
+    }
   )();
 
-export type Relation<Entity> =
-  | keyof Entity
-  | `${string & keyof Entity}.${string}`;
+export type Relation<Entity> = keyof Entity | `${string & keyof Entity}.${string}`;
 
 export class ListOptions<Entity> {
   private _where?: Record<string, unknown>;
@@ -39,7 +34,7 @@ export class ListOptions<Entity> {
     offset: number;
     limit?: number;
   };
-  private _order?: { field: keyof Entity; direction: "ASC" | "DESC" };
+  private _order?: { field: keyof Entity; direction: 'ASC' | 'DESC' };
   private _relations?: Relation<Entity>[];
 
   static for(input: Record<string, unknown>) {
@@ -70,11 +65,11 @@ export class ListOptions<Entity> {
     }
     return this;
   }
-  order(input: `${"" | "-"}${string & keyof Entity}`) {
+  order(input: `${'' | '-'}${string & keyof Entity}`) {
     if (input) {
       this._order = {
-        field: input.replace("-", "") as keyof Entity,
-        direction: input[0] === "-" ? "DESC" : "ASC",
+        field: input.replace('-', '') as keyof Entity,
+        direction: input[0] === '-' ? 'DESC' : 'ASC',
       };
     }
     return this;
@@ -95,7 +90,7 @@ export class ListOptions<Entity> {
       }),
       order: {
         // @FIXME: id 없는 entity면 에러남
-        [this._order?.field ?? "id"]: this._order?.direction ?? "DESC",
+        [this._order?.field ?? 'id']: this._order?.direction ?? 'DESC',
         // @TODO: any 없애기
       } as any,
       relations: [...new Set(this._relations as string[])],

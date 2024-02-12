@@ -1,16 +1,14 @@
-import { HttpStatus } from "@nestjs/common";
-import { FindOneOptions } from "typeorm";
-import { instanceToPlain } from "class-transformer";
+import { HttpStatus } from '@nestjs/common';
+import { FindOneOptions } from 'typeorm';
+import { instanceToPlain } from 'class-transformer';
 
-import { ListOptions } from "./decorators";
-import { BaseIdEntity } from "./entities";
-import { BaseException } from "./exceptions";
+import { ListOptions } from './decorators';
+import { BaseIdEntity } from './entities';
+import { BaseException } from './exceptions';
 
-import { BaseRepository } from "./base.repository";
+import { BaseRepository } from './base.repository';
 
-export type EntityRelations<Entity> = Array<
-  keyof Entity | `${string & keyof Entity}.${string}`
->;
+export type EntityRelations<Entity> = Array<keyof Entity | `${string & keyof Entity}.${string}`>;
 
 export abstract class BaseService<
   Entity extends BaseIdEntity,
@@ -26,10 +24,7 @@ export abstract class BaseService<
     return await this.repository.find(options?.toFindOptions());
   }
 
-  findOne(
-    partial: FindOneOptions<Entity>,
-    relations?: Relations,
-  ): Promise<Entity | null> {
+  findOne(partial: FindOneOptions<Entity>, relations?: Relations): Promise<Entity | null> {
     return this.repository.findOne({
       relations: relations as unknown as string[],
       ...partial,
@@ -45,8 +40,8 @@ export abstract class BaseService<
     const isMine = await this.repository.checkBelongsTo(ids, userId);
     if (!isMine) {
       throw new BaseException({
-        code: "FORBIDDEN",
-        message: "접근권한이 없습니다",
+        code: 'FORBIDDEN',
+        message: '접근권한이 없습니다',
         status: HttpStatus.FORBIDDEN,
       });
     }

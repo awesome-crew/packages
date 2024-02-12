@@ -1,0 +1,4 @@
+.github
+
+# .yarnrc.yml 파일이 포매팅할때마다 single quote로 포맷되는 문제가 있어서 ignore
+.yarnrc.yml

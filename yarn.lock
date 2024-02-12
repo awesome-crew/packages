@@ -55,6 +55,7 @@ __metadata:
     class-validator: "*"
     date-fns-tz: "*"
     reflect-metadata: "*"
+    rxjs: "*"
     typeorm: "*"
   languageName: unknown
   linkType: soft

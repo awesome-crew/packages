@@ -1,5 +1,5 @@
-import { describe, expect, it } from "@jest/globals";
-import { faker } from "@faker-js/faker";
+import { describe, expect, it } from '@jest/globals';
+import { faker } from '@faker-js/faker';
 import {
   Between,
   In,
@@ -9,19 +9,19 @@ import {
   MoreThan,
   MoreThanOrEqual,
   Not,
-} from "typeorm";
+} from 'typeorm';
 
-import { parseFilter } from "./filter.helpers";
+import { parseFilter } from './filter.helpers';
 
-describe("filter helpers", () => {
-  describe("parseFilter", () => {
-    it("should return {} when filter is falsy or empty", () => {
+describe('filter helpers', () => {
+  describe('parseFilter', () => {
+    it('should return {} when filter is falsy or empty', () => {
       expect(parseFilter(null)).toEqual({});
       expect(parseFilter(undefined)).toEqual({});
       expect(parseFilter({})).toEqual({});
     });
 
-    it("should return exact match filter", () => {
+    it('should return exact match filter', () => {
       const strs = [faker.lorem.text(), faker.lorem.text(), faker.lorem.text()];
       expect(parseFilter({ id: 1 })).toEqual({ id: 1 });
       expect(parseFilter({ id: 1, nameIn: strs })).toEqual({
@@ -30,13 +30,13 @@ describe("filter helpers", () => {
       });
     });
 
-    it("should parse Like", () => {
+    it('should parse Like', () => {
       const str = faker.lorem.text();
 
       expect(parseFilter({ nameLike: str })).toEqual({ name: Like(`${str}%`) });
     });
 
-    it("should parse In", () => {
+    it('should parse In', () => {
       const strs = [faker.lorem.text(), faker.lorem.text(), faker.lorem.text()];
       const nums = [faker.number.int(), faker.number.int(), faker.number.int()];
 
@@ -48,10 +48,8 @@ describe("filter helpers", () => {
       });
     });
 
-    it("should parse Between", () => {
-      const [from, to] = [faker.number.int(), faker.number.int()].sort(
-        (a, b) => a - b,
-      );
+    it('should parse Between', () => {
+      const [from, to] = [faker.number.int(), faker.number.int()].sort((a, b) => a - b);
 
       const inputs = [
         [from, to],
@@ -65,7 +63,7 @@ describe("filter helpers", () => {
       }
     });
 
-    it("should parse Mt", () => {
+    it('should parse Mt', () => {
       const num = faker.number.int();
 
       expect(parseFilter({ ageMt: num })).toEqual({
@@ -73,7 +71,7 @@ describe("filter helpers", () => {
       });
     });
 
-    it("should parse Mte", () => {
+    it('should parse Mte', () => {
       const num = faker.number.int();
 
       expect(parseFilter({ ageMte: num })).toEqual({
@@ -81,7 +79,7 @@ describe("filter helpers", () => {
       });
     });
 
-    it("should parse Lte", () => {
+    it('should parse Lte', () => {
       const num = faker.number.int();
 
       expect(parseFilter({ ageLte: num })).toEqual({
@@ -89,8 +87,8 @@ describe("filter helpers", () => {
       });
     });
 
-    it("should parse IsNull", () => {
-      [true, false].forEach((value) => {
+    it('should parse IsNull', () => {
+      [true, false].forEach(value => {
         expect(parseFilter({ titleIsNull: value })).toEqual({
           title: value ? IsNull() : Not(IsNull()),
         });

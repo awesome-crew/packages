@@ -1,7 +1,7 @@
-import { format, utcToZonedTime } from "date-fns-tz";
+import { format, utcToZonedTime } from 'date-fns-tz';
 
 export const formatSeoulDate = (pattern: string, date = new Date()): string => {
-  const timeZone = "Asia/Seoul";
+  const timeZone = 'Asia/Seoul';
   const zonedDate = utcToZonedTime(date, timeZone);
   // zonedDate could be used to initialize a date picker or display the formatted local date/time
 

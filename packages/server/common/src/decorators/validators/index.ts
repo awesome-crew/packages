@@ -1,1 +1,1 @@
-export * from "./is-month-string";
+export * from './is-month-string';
