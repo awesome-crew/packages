@@ -24,6 +24,10 @@ const RAW_RUNTIME_STATE =
     {\
       "name": "@awesome-dev/server-common",\
       "reference": "workspace:packages/server/common"\
+    },\
+    {\
+      "name": "@awesome-dev/server-typeorm",\
+      "reference": "workspace:packages/server/typeorm"\
     }\
   ],\
   "enableTopLevelFallback": true,\
@@ -32,6 +36,7 @@ const RAW_RUNTIME_STATE =
     ["@awesome-dev/jest", ["virtual:2952eeb9b6dd026871158e2aab7a79709ee9146fee46f705f922e4eec65b0625e9751e4d4934e04ecfb7def314f36c97401a055553e627529e70fd6bf57d80a8#workspace:packages/common/jest", "workspace:packages/common/jest"]],\
     ["@awesome-dev/server-auth", ["workspace:packages/server/auth"]],\
     ["@awesome-dev/server-common", ["virtual:2952eeb9b6dd026871158e2aab7a79709ee9146fee46f705f922e4eec65b0625e9751e4d4934e04ecfb7def314f36c97401a055553e627529e70fd6bf57d80a8#workspace:packages/server/common", "workspace:packages/server/common"]],\
+    ["@awesome-dev/server-typeorm", ["workspace:packages/server/typeorm"]],\
     ["packages", ["workspace:."]]\
   ],\
   "fallbackPool": [\
@@ -174,6 +179,26 @@ const RAW_RUNTIME_STATE =
           ["rxjs", "npm:7.8.1"],\
           ["ts-jest", "virtual:2952eeb9b6dd026871158e2aab7a79709ee9146fee46f705f922e4eec65b0625e9751e4d4934e04ecfb7def314f36c97401a055553e627529e70fd6bf57d80a8#npm:29.1.2"],\
           ["typeorm", "virtual:23de94e3b62182955e09215e8ba73068f57c4552ffece876ef47af85a97f0cf754f3a836fbc1d49eb12fc70795bf196b1b9c30a398fcc0aeaa3d5d2eb40513aa#npm:0.3.20"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@awesome-dev/server-typeorm", [\
+      ["workspace:packages/server/typeorm", {\
+        "packageLocation": "./packages/server/typeorm/",\
+        "packageDependencies": [\
+          ["@awesome-dev/server-typeorm", "workspace:packages/server/typeorm"],\
+          ["@awesome-dev/jest", "virtual:2952eeb9b6dd026871158e2aab7a79709ee9146fee46f705f922e4eec65b0625e9751e4d4934e04ecfb7def314f36c97401a055553e627529e70fd6bf57d80a8#workspace:packages/common/jest"],\
+          ["@jest/globals", "npm:29.7.0"],\
+          ["@nestjs/typeorm", "virtual:7e6b194002e24b6f7e03fb31f832d684974432e43c64343d9f86352fa7492ccddc75be580ce2c1eb775186e530a5d39fe13dccc3eac3d95e8409cc3e6859b52a#npm:10.0.2"],\
+          ["@types/yargs", "npm:17.0.32"],\
+          ["chalk", "npm:4.1.2"],\
+          ["find-up", "npm:5.0.0"],\
+          ["reflect-metadata", "npm:0.2.1"],\
+          ["ts-jest", "virtual:2952eeb9b6dd026871158e2aab7a79709ee9146fee46f705f922e4eec65b0625e9751e4d4934e04ecfb7def314f36c97401a055553e627529e70fd6bf57d80a8#npm:29.1.2"],\
+          ["ts-node", "virtual:7e6b194002e24b6f7e03fb31f832d684974432e43c64343d9f86352fa7492ccddc75be580ce2c1eb775186e530a5d39fe13dccc3eac3d95e8409cc3e6859b52a#npm:10.9.2"],\
+          ["typeorm", "virtual:7e6b194002e24b6f7e03fb31f832d684974432e43c64343d9f86352fa7492ccddc75be580ce2c1eb775186e530a5d39fe13dccc3eac3d95e8409cc3e6859b52a#npm:0.3.20"],\
+          ["yargs", "npm:17.7.2"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -1727,6 +1752,45 @@ const RAW_RUNTIME_STATE =
           "class-validator",\
           "reflect-metadata",\
           "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@nestjs/typeorm", [\
+      ["npm:10.0.2", {\
+        "packageLocation": "../../../../.yarn/berry/cache/@nestjs-typeorm-npm-10.0.2-be64e3a959-10c0.zip/node_modules/@nestjs/typeorm/",\
+        "packageDependencies": [\
+          ["@nestjs/typeorm", "npm:10.0.2"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:7e6b194002e24b6f7e03fb31f832d684974432e43c64343d9f86352fa7492ccddc75be580ce2c1eb775186e530a5d39fe13dccc3eac3d95e8409cc3e6859b52a#npm:10.0.2", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-typeorm-virtual-dcfa65d909/5/.yarn/berry/cache/@nestjs-typeorm-npm-10.0.2-be64e3a959-10c0.zip/node_modules/@nestjs/typeorm/",\
+        "packageDependencies": [\
+          ["@nestjs/typeorm", "virtual:7e6b194002e24b6f7e03fb31f832d684974432e43c64343d9f86352fa7492ccddc75be580ce2c1eb775186e530a5d39fe13dccc3eac3d95e8409cc3e6859b52a#npm:10.0.2"],\
+          ["@nestjs/common", null],\
+          ["@nestjs/core", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["@types/typeorm", null],\
+          ["reflect-metadata", "npm:0.2.1"],\
+          ["rxjs", null],\
+          ["typeorm", "virtual:7e6b194002e24b6f7e03fb31f832d684974432e43c64343d9f86352fa7492ccddc75be580ce2c1eb775186e530a5d39fe13dccc3eac3d95e8409cc3e6859b52a#npm:0.3.20"],\
+          ["uuid", "npm:9.0.1"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "@types/typeorm",\
+          "reflect-metadata",\
+          "rxjs",\
+          "typeorm"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -10241,6 +10305,42 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
+      ["virtual:7e6b194002e24b6f7e03fb31f832d684974432e43c64343d9f86352fa7492ccddc75be580ce2c1eb775186e530a5d39fe13dccc3eac3d95e8409cc3e6859b52a#npm:10.9.2", {\
+        "packageLocation": "./.yarn/__virtual__/ts-node-virtual-a171b65b92/5/.yarn/berry/cache/ts-node-npm-10.9.2-3f3890b9ac-10c0.zip/node_modules/ts-node/",\
+        "packageDependencies": [\
+          ["ts-node", "virtual:7e6b194002e24b6f7e03fb31f832d684974432e43c64343d9f86352fa7492ccddc75be580ce2c1eb775186e530a5d39fe13dccc3eac3d95e8409cc3e6859b52a#npm:10.9.2"],\
+          ["@cspotcode/source-map-support", "npm:0.8.1"],\
+          ["@swc/core", null],\
+          ["@swc/wasm", null],\
+          ["@tsconfig/node10", "npm:1.0.9"],\
+          ["@tsconfig/node12", "npm:1.0.11"],\
+          ["@tsconfig/node14", "npm:1.0.3"],\
+          ["@tsconfig/node16", "npm:1.0.4"],\
+          ["@types/node", null],\
+          ["@types/swc__core", null],\
+          ["@types/swc__wasm", null],\
+          ["@types/typescript", null],\
+          ["acorn", "npm:8.11.3"],\
+          ["acorn-walk", "npm:8.3.2"],\
+          ["arg", "npm:4.1.3"],\
+          ["create-require", "npm:1.1.1"],\
+          ["diff", "npm:4.0.2"],\
+          ["make-error", "npm:1.3.6"],\
+          ["typescript", null],\
+          ["v8-compile-cache-lib", "npm:3.0.1"],\
+          ["yn", "npm:3.1.1"]\
+        ],\
+        "packagePeers": [\
+          "@swc/core",\
+          "@swc/wasm",\
+          "@types/node",\
+          "@types/swc__core",\
+          "@types/swc__wasm",\
+          "@types/typescript",\
+          "typescript"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:bae28cb79c047adc1c696f5d5bcc5e3a895d46be22ce4fb4213204fb9d072f3376576e4a235c53cd498954a9e10f6a53fd72e8fae363e92d9f1ae7720a6ee042#npm:10.9.2", {\
         "packageLocation": "./.yarn/__virtual__/ts-node-virtual-bbceb49294/5/.yarn/berry/cache/ts-node-npm-10.9.2-3f3890b9ac-10c0.zip/node_modules/ts-node/",\
         "packageDependencies": [\
@@ -10465,6 +10565,98 @@ const RAW_RUNTIME_STATE =
           ["sql.js", null],\
           ["sqlite3", null],\
           ["ts-node", null],\
+          ["tslib", "npm:2.6.2"],\
+          ["typeorm-aurora-data-api-driver", null],\
+          ["uuid", "npm:9.0.1"],\
+          ["yargs", "npm:17.7.2"]\
+        ],\
+        "packagePeers": [\
+          "@google-cloud/spanner",\
+          "@sap/hana-client",\
+          "@types/better-sqlite3",\
+          "@types/google-cloud__spanner",\
+          "@types/hdb-pool",\
+          "@types/ioredis",\
+          "@types/mongodb",\
+          "@types/mssql",\
+          "@types/mysql2",\
+          "@types/oracledb",\
+          "@types/pg-native",\
+          "@types/pg-query-stream",\
+          "@types/pg",\
+          "@types/redis",\
+          "@types/sap__hana-client",\
+          "@types/sql.js",\
+          "@types/sqlite3",\
+          "@types/ts-node",\
+          "@types/typeorm-aurora-data-api-driver",\
+          "better-sqlite3",\
+          "hdb-pool",\
+          "ioredis",\
+          "mongodb",\
+          "mssql",\
+          "mysql2",\
+          "oracledb",\
+          "pg-native",\
+          "pg-query-stream",\
+          "pg",\
+          "redis",\
+          "sql.js",\
+          "sqlite3",\
+          "ts-node",\
+          "typeorm-aurora-data-api-driver"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:7e6b194002e24b6f7e03fb31f832d684974432e43c64343d9f86352fa7492ccddc75be580ce2c1eb775186e530a5d39fe13dccc3eac3d95e8409cc3e6859b52a#npm:0.3.20", {\
+        "packageLocation": "./.yarn/__virtual__/typeorm-virtual-a2cd2c991f/5/.yarn/berry/cache/typeorm-npm-0.3.20-3cdc45367a-10c0.zip/node_modules/typeorm/",\
+        "packageDependencies": [\
+          ["typeorm", "virtual:7e6b194002e24b6f7e03fb31f832d684974432e43c64343d9f86352fa7492ccddc75be580ce2c1eb775186e530a5d39fe13dccc3eac3d95e8409cc3e6859b52a#npm:0.3.20"],\
+          ["@google-cloud/spanner", null],\
+          ["@sap/hana-client", null],\
+          ["@sqltools/formatter", "npm:1.2.5"],\
+          ["@types/better-sqlite3", null],\
+          ["@types/google-cloud__spanner", null],\
+          ["@types/hdb-pool", null],\
+          ["@types/ioredis", null],\
+          ["@types/mongodb", null],\
+          ["@types/mssql", null],\
+          ["@types/mysql2", null],\
+          ["@types/oracledb", null],\
+          ["@types/pg", null],\
+          ["@types/pg-native", null],\
+          ["@types/pg-query-stream", null],\
+          ["@types/redis", null],\
+          ["@types/sap__hana-client", null],\
+          ["@types/sql.js", null],\
+          ["@types/sqlite3", null],\
+          ["@types/ts-node", null],\
+          ["@types/typeorm-aurora-data-api-driver", null],\
+          ["app-root-path", "npm:3.1.0"],\
+          ["better-sqlite3", null],\
+          ["buffer", "npm:6.0.3"],\
+          ["chalk", "npm:4.1.2"],\
+          ["cli-highlight", "npm:2.1.11"],\
+          ["dayjs", "npm:1.11.10"],\
+          ["debug", "virtual:1ff4b5f90832ba0a9c93ba1223af226e44ba70c1126a3740d93562b97bc36544e896a5e95908196f7458713e6a6089a34bfc67362fc6df7fa093bd06c878be47#npm:4.3.4"],\
+          ["dotenv", "npm:16.4.2"],\
+          ["glob", "npm:10.3.10"],\
+          ["hdb-pool", null],\
+          ["ioredis", null],\
+          ["mkdirp", "npm:2.1.6"],\
+          ["mongodb", null],\
+          ["mssql", null],\
+          ["mysql2", null],\
+          ["oracledb", null],\
+          ["pg", null],\
+          ["pg-native", null],\
+          ["pg-query-stream", null],\
+          ["redis", null],\
+          ["reflect-metadata", "npm:0.2.1"],\
+          ["sha.js", "npm:2.4.11"],\
+          ["sql.js", null],\
+          ["sqlite3", null],\
+          ["ts-node", "virtual:7e6b194002e24b6f7e03fb31f832d684974432e43c64343d9f86352fa7492ccddc75be580ce2c1eb775186e530a5d39fe13dccc3eac3d95e8409cc3e6859b52a#npm:10.9.2"],\
           ["tslib", "npm:2.6.2"],\
           ["typeorm-aurora-data-api-driver", null],\
           ["uuid", "npm:9.0.1"],\

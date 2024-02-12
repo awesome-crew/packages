@@ -1,0 +1,37 @@
+{
+  "name": "@awesome-dev/server-typeorm",
+  "version": "0.0.13",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "awesome-typeorm": "dist/cli-ts-node-commonjs.js"
+  },
+  "scripts": {
+    "check:lint": "yarn run -T eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "check:type": "yarn run -T tsc --noEmit",
+    "check:test": "yarn run -T jest",
+    "check": "yarn run -T run-p 'check:*'",
+    "build": "yarn run -T rimraf -rf dist && yarn run -T tsc -p tsconfig.json",
+    "prepublish:npm": "yarn check && yarn build",
+    "publish:npm": "yarn npm publish"
+  },
+  "dependencies": {
+    "@nestjs/typeorm": "^10.0.2",
+    "chalk": "4",
+    "find-up": "5.0.0",
+    "reflect-metadata": "^0.2.1",
+    "typeorm": "^0.3.20",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@awesome-dev/jest": "workspace:^",
+    "@jest/globals": "^29.7.0",
+    "@types/yargs": "^17.0.32",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2"
+  },
+  "peerDependencies": {
+    "mysql2": "^3.9.1",
+    "ts-node": "*"
+  }
+}
