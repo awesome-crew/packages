@@ -16,7 +16,7 @@ export class AuthModule {
     return {
       global: true,
       module: AuthModule,
-      imports: [],
+      imports: asyncConfig.imports ?? [],
       providers: [AuthService, AuthConfigProvider],
       exports: [AuthService, AuthConfigProvider],
     };
