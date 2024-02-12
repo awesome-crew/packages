@@ -1,5 +1,7 @@
 {
   "name": "@awesome-dev/server-common",
+  "version": "0.0.1",
+  "main": "dist/index.js",
   "scripts": {
     "check:lint": "yarn run -T eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "check:type": "yarn run -T tsc --noEmit",
@@ -7,7 +9,7 @@
     "check": "yarn run -T run-p 'check:*'",
     "build": "yarn run -T rimraf -rf dist && yarn run -T tsc -p tsconfig.json",
     "prepublish:npm": "yarn check && yarn build",
-    "publish:npm": "yarn npm publish --public"
+    "publish:npm": "yarn npm publish"
   },
   "devDependencies": {
     "@awesome-dev/jest": "workspace:^",
