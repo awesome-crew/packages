@@ -45,9 +45,14 @@ __metadata:
     "@types/express": "npm:^4"
     "@types/jsonwebtoken": "npm:^9"
     express: "npm:^4.18.2"
-    jsonwebtoken: "npm:*"
+    jsonwebtoken: "npm:^9.0.2"
     rxjs: "npm:^7.8.1"
     ts-jest: "npm:^29.1.2"
+  peerDependencies:
+    "@awesome-dev/server-common": "*"
+    "@nestjs/common": "*"
+    express: "*"
+    rxjs: "*"
   languageName: unknown
   linkType: soft
 
@@ -6064,7 +6069,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsonwebtoken@npm:*":
+"jsonwebtoken@npm:^9.0.2":
   version: 9.0.2
   resolution: "jsonwebtoken@npm:9.0.2"
   dependencies:

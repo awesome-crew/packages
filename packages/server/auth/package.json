@@ -12,6 +12,9 @@
     "prepublish:npm": "yarn check && yarn build",
     "publish:npm": "yarn npm publish"
   },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2"
+  },
   "devDependencies": {
     "@awesome-dev/jest": "workspace:^",
     "@awesome-dev/server-common": "workspace:^",
@@ -23,11 +26,10 @@
     "rxjs": "^7.8.1",
     "ts-jest": "^29.1.2"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@awesome-dev/server-common": "*",
     "@nestjs/common": "*",
     "express": "*",
-    "jsonwebtoken": "*",
     "rxjs": "*"
   }
 }
