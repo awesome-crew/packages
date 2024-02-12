@@ -143,6 +143,7 @@ const RAW_RUNTIME_STATE =
           ["@types/class-validator", null],\
           ["@types/date-fns-tz", null],\
           ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
           ["@types/reflect-metadata", null],\
           ["@types/rxjs", null],\
           ["class-transformer", "npm:0.5.1"],\
@@ -159,6 +160,7 @@ const RAW_RUNTIME_STATE =
           "@types/class-validator",\
           "@types/date-fns-tz",\
           "@types/nestjs__common",\
+          "@types/nestjs__core",\
           "@types/reflect-metadata",\
           "@types/rxjs",\
           "rxjs"\

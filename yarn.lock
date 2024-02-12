@@ -75,6 +75,7 @@ __metadata:
   peerDependencies:
     "@awesome-dev/server-typeorm": "*"
     "@nestjs/common": "*"
+    "@nestjs/core": "*"
     class-transformer: "*"
     class-validator: "*"
     date-fns-tz: "*"
