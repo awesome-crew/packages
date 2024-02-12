@@ -3,7 +3,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
   BaseEntity as TypeORMBaseEntity,
-} from 'typeorm';
+} from '@awesome-dev/server-typeorm';
 
 export class BaseIdEntity extends TypeORMBaseEntity {
   constructor(attrs?: Partial<BaseIdEntity>) {

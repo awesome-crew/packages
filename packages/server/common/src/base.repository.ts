@@ -1,5 +1,5 @@
+import { FindOptionsWhere, Repository } from '@awesome-dev/server-typeorm';
 import { HttpStatus } from '@nestjs/common';
-import { FindOptionsWhere, Repository } from 'typeorm';
 
 import { BaseIdEntity } from './entities';
 import { BaseException } from './exceptions';

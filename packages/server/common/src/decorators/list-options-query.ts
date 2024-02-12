@@ -1,5 +1,5 @@
+import type { FindManyOptions, FindOptionsWhere } from '@awesome-dev/server-typeorm';
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
-import type { FindManyOptions, FindOptionsWhere } from 'typeorm';
 
 import { parseFilter } from '../helpers';
 

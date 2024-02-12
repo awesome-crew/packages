@@ -1,4 +1,3 @@
-import { BadRequestException } from '@nestjs/common';
 import {
   In,
   Between,
@@ -9,7 +8,8 @@ import {
   IsNull,
   Not,
   Like,
-} from 'typeorm';
+} from '@awesome-dev/server-typeorm';
+import { BadRequestException } from '@nestjs/common';
 
 const { isArray } = Array;
 

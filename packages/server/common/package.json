@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@awesome-dev/jest": "workspace:^",
+    "@awesome-dev/server-typeorm": "workspace:^",
     "@faker-js/faker": "^8.4.1",
     "@jest/globals": "^29.7.0",
     "@nestjs/common": "^10.3.3",
@@ -22,16 +23,15 @@
     "date-fns-tz": "^2.0.0",
     "reflect-metadata": "^0.2.1",
     "rxjs": "^7.8.1",
-    "ts-jest": "^29.1.2",
-    "typeorm": "^0.3.20"
+    "ts-jest": "^29.1.2"
   },
   "peerDependencies": {
+    "@awesome-dev/server-typeorm": "*",
     "@nestjs/common": "*",
     "class-transformer": "*",
     "class-validator": "*",
     "date-fns-tz": "*",
     "reflect-metadata": "*",
-    "rxjs": "*",
-    "typeorm": "*"
+    "rxjs": "*"
   }
 }

@@ -9,7 +9,7 @@ import {
   MoreThan,
   MoreThanOrEqual,
   Not,
-} from 'typeorm';
+} from '@awesome-dev/server-typeorm';
 
 import { parseFilter } from './filter.helpers';
 
