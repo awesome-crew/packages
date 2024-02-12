@@ -1,5 +1,6 @@
 {
   "name": "packages",
+  "private": true,
   "packageManager": "yarn@4.1.0",
   "devDependencies": {
     "@types/eslint": "^8",
