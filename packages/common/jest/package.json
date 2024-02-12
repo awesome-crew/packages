@@ -1,0 +1,31 @@
+{
+  "name": "@awesome-dev/jest",
+  "version": "1.0.1",
+  "toss": {
+    "codeOwners": [
+      "최수민"
+    ]
+  },
+  "description": "jest 유틸",
+  "license": "UNLICENSED",
+  "main": "src/index.js",
+  "publishConfig": {
+    "main": "src/index.js",
+    "types": "src/index.js",
+    "module": "src/index.js"
+  },
+  "scripts": {
+    "lint": "yarn run -T eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "yarn lint --fix",
+    "test": "jest --passWithNoTests",
+    "test:watch": "yarn test --watch"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "jest": "^26.6.3",
+    "ts-jest": "^29.0.3"
+  },
+  "peerDependencies": {
+    "jest": ">= 26"
+  }
+}
