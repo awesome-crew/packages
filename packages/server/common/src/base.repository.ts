@@ -1,10 +1,22 @@
-import { FindOptionsWhere, Repository } from '@awesome-dev/server-typeorm';
+import {
+  DataSource,
+  EntityTarget,
+  FindOptionsWhere,
+  Repository,
+} from '@awesome-dev/server-typeorm';
 import { HttpStatus } from '@nestjs/common';
 
 import { BaseIdEntity } from './entities';
 import { BaseException } from './exceptions';
 
 export abstract class BaseRepository<Entity extends BaseIdEntity> extends Repository<Entity> {
+  constructor(
+    protected readonly dataSource: DataSource,
+    target: EntityTarget<Entity>
+  ) {
+    super(target, dataSource.createEntityManager());
+  }
+
   protected isEntity(obj: unknown): obj is Entity {
     return obj !== undefined && (obj as Entity).id !== undefined;
   }
