@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@nestjs/typeorm": "^10.0.2",
+    "@toss/assert": "^1.1.12",
     "chalk": "4",
     "find-up": "5.0.0",
     "reflect-metadata": "^0.2.1",

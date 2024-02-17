@@ -93,6 +93,7 @@ __metadata:
     "@nestjs/common": "npm:^10.3.3"
     "@nestjs/core": "npm:^10.3.3"
     "@nestjs/typeorm": "npm:^10.0.2"
+    "@toss/assert": "npm:^1.1.12"
     "@types/yargs": "npm:^17.0.32"
     chalk: "npm:4"
     find-up: "npm:5.0.0"
@@ -456,6 +457,15 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.0.0-0
   checksum: 10c0/4d6e9cdb9d0bfb9bd9b220fc951d937fce2ca69135ec121153572cebe81d86abc9a489208d6b69ee5f10cadcaeffa10d0425340a5029e40e14a6025021b90948
+  languageName: node
+  linkType: hard
+
+"@babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.21.0":
+  version: 7.23.9
+  resolution: "@babel/runtime@npm:7.23.9"
+  dependencies:
+    regenerator-runtime: "npm:^0.14.0"
+  checksum: 10c0/e71205fdd7082b2656512cc98e647d9ea7e222e4fe5c36e9e5adc026446fcc3ba7b3cdff8b0b694a0b78bb85db83e7b1e3d4c56ef90726682b74f13249cf952d
   languageName: node
   linkType: hard
 
@@ -1359,6 +1369,25 @@ __metadata:
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
   checksum: 10c0/073bfa548026b1ebaf1659eb8961e526be22fa77139b10d60e712f46d2f0f05f4e6c8bec62a087d41088ee9e29faa7f54838568e475ab2f776171003c3920858
+  languageName: node
+  linkType: hard
+
+"@toss/assert@npm:^1.1.12":
+  version: 1.1.12
+  resolution: "@toss/assert@npm:1.1.12"
+  dependencies:
+    "@toss/utils": "npm:^1.4.6"
+  checksum: 10c0/3a0210b0a6c59f8f2211cc88b0ae7b835497af95455c1d93f20301fa06c3c3d008ddaedd312df506d7158a187383b27f2c9f5140d9810778cdfeb05a0d4abde7
+  languageName: node
+  linkType: hard
+
+"@toss/utils@npm:^1.4.6":
+  version: 1.4.6
+  resolution: "@toss/utils@npm:1.4.6"
+  dependencies:
+    "@babel/runtime": "npm:^7.14.8"
+    date-fns: "npm:^2.25.0"
+  checksum: 10c0/d1c956c1ab2bb4039e3f8df36ae4bbccf3247a651768a27412e3189582ea32551b9f892e8965c62fe478f82e74f4837eec697bf2431893bb233a2cf8a6755448
   languageName: node
   linkType: hard
 
@@ -2930,6 +2959,15 @@ __metadata:
   peerDependencies:
     date-fns: ">=2.0.0"
   checksum: 10c0/31cacb83c675ef8c2cf31d21c298ab6d74c5e975412dd804664d031ac0f2f03ed5bfb2a950fa15a321bbbcb90b833c300823fbceba0133680065a71894cc1170
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^2.25.0":
+  version: 2.30.0
+  resolution: "date-fns@npm:2.30.0"
+  dependencies:
+    "@babel/runtime": "npm:^7.21.0"
+  checksum: 10c0/e4b521fbf22bc8c3db332bbfb7b094fd3e7627de0259a9d17c7551e2d2702608a7307a449206065916538e384f37b181565447ce2637ae09828427aed9cb5581
   languageName: node
   linkType: hard
 
@@ -7546,6 +7584,13 @@ __metadata:
   version: 0.2.1
   resolution: "reflect-metadata@npm:0.2.1"
   checksum: 10c0/6ca3c674bb43cf8ec3a3f5f38c8730a6116335f8e562fcdcdf3a492af168c5a7f0e8f17476a5710c3fe6bf9b5d22e8a463f14c0e26e326339cab65e099900ef7
+  languageName: node
+  linkType: hard
+
+"regenerator-runtime@npm:^0.14.0":
+  version: 0.14.1
+  resolution: "regenerator-runtime@npm:0.14.1"
+  checksum: 10c0/1b16eb2c4bceb1665c89de70dcb64126a22bc8eb958feef3cd68fe11ac6d2a4899b5cd1b80b0774c7c03591dc57d16631a7f69d2daa2ec98100e2f29f7ec4cc4
   languageName: node
   linkType: hard
 
