@@ -1,4 +1,4 @@
-import { DynamicModule, Provider } from '@nestjs/common';
+import { DynamicModule, Global, Provider } from '@nestjs/common';
 import {
   TypeOrmModule as _TypeOrmModule,
   TypeOrmModuleOptions,
@@ -31,6 +31,7 @@ function getProviders(
   });
 }
 
+@Global()
 export class TypeOrmModule {
   static forRootAsync(dirName: string) {
     return _TypeOrmModule.forRootAsync({
