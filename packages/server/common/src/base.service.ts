@@ -10,6 +10,10 @@ import { BaseRepository } from './base.repository';
 
 export type EntityRelations<Entity> = Array<keyof Entity | `${string & keyof Entity}.${string}`>;
 
+type EntityClass<Entity> = {
+  new (partial: Partial<Entity>): Entity;
+};
+
 export abstract class BaseService<
   Entity extends BaseIdEntity,
   Relations = EntityRelations<Entity>,
@@ -53,5 +57,20 @@ export abstract class BaseService<
     if (entity != null) {
       await this.repository.remove(entity);
     }
+  }
+
+  create(partial: Partial<Entity>) {
+    return this.repository.save(new (this.repository.target as EntityClass<Entity>)(partial));
+  }
+
+  async update(id: number, partial: Partial<Entity>) {
+    const existing = await this.get(id);
+
+    return this.repository.save(
+      new (this.repository.target as EntityClass<Entity>)({
+        ...existing,
+        ...partial,
+      })
+    );
   }
 }
