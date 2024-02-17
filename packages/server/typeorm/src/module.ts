@@ -57,6 +57,7 @@ export class TypeOrmModule {
       module: TypeOrmModule,
       providers,
       exports: providers,
+      imports: [_TypeOrmModule.forFeature(repositories.map(getEntityByRepository))],
     };
   }
 }
