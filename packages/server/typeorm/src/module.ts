@@ -28,36 +28,45 @@ function getProviders(repositories: Repository[]): Provider[] {
 
 @Module({})
 export class TypeOrmModule {
-  static forRootAsync(dirName: string) {
-    return _TypeOrmModule.forRootAsync({
-      imports: [],
-      useFactory: async () => {
-        const configPath = await findRootPath(dirName);
-        const config = await loadDataSource(configPath);
+  static forRootAsync(dirName: string): DynamicModule {
+    return {
+      module: TypeOrmModule,
+      imports: [
+        _TypeOrmModule.forRootAsync({
+          imports: [],
+          useFactory: async () => {
+            const configPath = await findRootPath(dirName);
+            const config = await loadDataSource(configPath);
 
-        const srcPath = await findSrcPath(dirName);
+            const srcPath = await findSrcPath(dirName);
 
-        return {
-          ...config.options,
-          entities: [srcPath + '/**/*.entity.ts', srcPath + '/**/*.entity.js'],
-          migrations: [
-            srcPath + '/database/migrations/*.ts',
-            srcPath + '/database/migrations/*.js',
-          ],
-        } as TypeOrmModuleOptions;
-      },
-      inject: [],
-    });
+            return {
+              ...config.options,
+              entities: [srcPath + '/**/*.entity.ts', srcPath + '/**/*.entity.js'],
+              migrations: [
+                srcPath + '/database/migrations/*.ts',
+                srcPath + '/database/migrations/*.js',
+              ],
+            } as TypeOrmModuleOptions;
+          },
+          inject: [],
+        }),
+      ],
+    };
   }
 
   static forFeature(repositories: Repository[]): DynamicModule {
-    const providers = getProviders(repositories);
+    const repositoryProviders = getProviders(repositories);
+    const { providers: entityProviders } = _TypeOrmModule.forFeature(
+      repositories.map(getEntityByRepository)
+    );
+
+    const providers = ([] as Provider[]).concat(repositoryProviders).concat(entityProviders ?? []);
 
     return {
       module: TypeOrmModule,
       providers,
       exports: providers,
-      imports: [_TypeOrmModule.forFeature(repositories.map(getEntityByRepository))],
     };
   }
 }
