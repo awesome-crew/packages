@@ -2,6 +2,7 @@ import { MigrationGenerateCommand } from 'typeorm/commands/MigrationGenerateComm
 import type { CommandModule, Argv, Arguments } from 'yargs';
 
 import { findDataSourcePath } from './helpers';
+import path from 'path';
 
 export class NewMigrationGenerateCommand implements CommandModule {
   command = 'makemigrations <path>';
@@ -20,6 +21,7 @@ export class NewMigrationGenerateCommand implements CommandModule {
 
     return new MigrationGenerateCommand().handler({
       ...args,
+      path: path.resolve(dataSourcePath, 'src/database/migrations/', args.path),
       dataSource: dataSourcePath,
     });
   }
