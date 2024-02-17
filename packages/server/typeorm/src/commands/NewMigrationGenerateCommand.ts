@@ -21,7 +21,7 @@ export class NewMigrationGenerateCommand implements CommandModule {
 
     return new MigrationGenerateCommand().handler({
       ...args,
-      path: path.resolve(dataSourcePath, 'src/database/migrations/', args.path),
+      path: path.resolve(path.dirname(dataSourcePath), 'src/database/migrations/', args.path),
       dataSource: dataSourcePath,
     });
   }
