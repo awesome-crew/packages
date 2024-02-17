@@ -1,16 +1,16 @@
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 
-import { findDataSourcePath, loadDataSource } from './dataSource';
+import { findRootPath, loadDataSource } from './dataSource';
 import { findSrcPath } from './findSrcPath';
 
-export function loadTypeOrmModule() {
+export function loadTypeOrmModule(dirName: string) {
   return TypeOrmModule.forRootAsync({
     imports: [],
     useFactory: async () => {
-      const configPath = await findDataSourcePath();
+      const configPath = await findRootPath(dirName);
       const config = await loadDataSource(configPath);
 
-      const srcPath = await findSrcPath();
+      const srcPath = await findSrcPath(dirName);
 
       return {
         ...config.options,

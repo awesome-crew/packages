@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 
-import { findDataSourcePath as _findDataSourcePath } from '../dataSource';
+import { findRootPath as _findRootPath } from '../dataSource';
 
 function logCmdError(prefix: string, err?: any) {
   console.log(chalk.black.bgRed(prefix));
@@ -12,7 +12,7 @@ function logCmdError(prefix: string, err?: any) {
 
 export function findDataSourcePath() {
   try {
-    return _findDataSourcePath();
+    return _findRootPath();
   } catch (err) {
     logCmdError('Error during dataSource finding:', err);
 
