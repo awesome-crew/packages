@@ -21,6 +21,7 @@
     "chalk": "4",
     "find-up": "5.0.0",
     "reflect-metadata": "^0.2.1",
+    "tsconfig-paths": "^4.2.0",
     "typeorm": "^0.3.20",
     "yargs": "^17.7.2"
   },

@@ -211,6 +211,7 @@ const RAW_RUNTIME_STATE =
           ["rxjs", "npm:7.8.1"],\
           ["ts-jest", "virtual:2952eeb9b6dd026871158e2aab7a79709ee9146fee46f705f922e4eec65b0625e9751e4d4934e04ecfb7def314f36c97401a055553e627529e70fd6bf57d80a8#npm:29.1.2"],\
           ["ts-node", "virtual:d52ab5a039d9d861e33777200ce8f8d540eb74a773df9449eb12967e9c571c03e5d370bc6dedaf9f30d662aa1a5d5024a4e6be08dd106a2233acffdf3de5375b#npm:10.9.2"],\
+          ["tsconfig-paths", "npm:4.2.0"],\
           ["typeorm", "virtual:d52ab5a039d9d861e33777200ce8f8d540eb74a773df9449eb12967e9c571c03e5d370bc6dedaf9f30d662aa1a5d5024a4e6be08dd106a2233acffdf3de5375b#npm:0.3.20"],\
           ["yargs", "npm:17.7.2"]\
         ],\
@@ -250,6 +251,7 @@ const RAW_RUNTIME_STATE =
           ["rxjs", "npm:7.8.1"],\
           ["ts-jest", "virtual:2952eeb9b6dd026871158e2aab7a79709ee9146fee46f705f922e4eec65b0625e9751e4d4934e04ecfb7def314f36c97401a055553e627529e70fd6bf57d80a8#npm:29.1.2"],\
           ["ts-node", "virtual:d52ab5a039d9d861e33777200ce8f8d540eb74a773df9449eb12967e9c571c03e5d370bc6dedaf9f30d662aa1a5d5024a4e6be08dd106a2233acffdf3de5375b#npm:10.9.2"],\
+          ["tsconfig-paths", "npm:4.2.0"],\
           ["typeorm", "virtual:d52ab5a039d9d861e33777200ce8f8d540eb74a773df9449eb12967e9c571c03e5d370bc6dedaf9f30d662aa1a5d5024a4e6be08dd106a2233acffdf3de5375b#npm:0.3.20"],\
           ["yargs", "npm:17.7.2"]\
         ],\
@@ -283,6 +285,7 @@ const RAW_RUNTIME_STATE =
           ["rxjs", "npm:7.8.1"],\
           ["ts-jest", "virtual:2952eeb9b6dd026871158e2aab7a79709ee9146fee46f705f922e4eec65b0625e9751e4d4934e04ecfb7def314f36c97401a055553e627529e70fd6bf57d80a8#npm:29.1.2"],\
           ["ts-node", "virtual:d52ab5a039d9d861e33777200ce8f8d540eb74a773df9449eb12967e9c571c03e5d370bc6dedaf9f30d662aa1a5d5024a4e6be08dd106a2233acffdf3de5375b#npm:10.9.2"],\
+          ["tsconfig-paths", "npm:4.2.0"],\
           ["typeorm", "virtual:d52ab5a039d9d861e33777200ce8f8d540eb74a773df9449eb12967e9c571c03e5d370bc6dedaf9f30d662aa1a5d5024a4e6be08dd106a2233acffdf3de5375b#npm:0.3.20"],\
           ["yargs", "npm:17.7.2"]\
         ],\
@@ -10791,6 +10794,18 @@ const RAW_RUNTIME_STATE =
           "@types/swc__wasm",\
           "@types/typescript",\
           "typescript"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["tsconfig-paths", [\
+      ["npm:4.2.0", {\
+        "packageLocation": "../../../../.yarn/berry/cache/tsconfig-paths-npm-4.2.0-ac1edf8677-10c0.zip/node_modules/tsconfig-paths/",\
+        "packageDependencies": [\
+          ["tsconfig-paths", "npm:4.2.0"],\
+          ["json5", "npm:2.2.3"],\
+          ["minimist", "npm:1.2.8"],\
+          ["strip-bom", "npm:3.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
