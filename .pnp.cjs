@@ -30,6 +30,10 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:packages/server/common"\
     },\
     {\
+      "name": "@awesome-dev/server-messageme",\
+      "reference": "workspace:packages/server/messageme"\
+    },\
+    {\
       "name": "@awesome-dev/server-typeorm",\
       "reference": "workspace:packages/server/typeorm"\
     }\
@@ -41,6 +45,7 @@ const RAW_RUNTIME_STATE =
     ["@awesome-dev/server-auth", ["workspace:packages/server/auth"]],\
     ["@awesome-dev/server-aws-s3", ["workspace:packages/server/aws-s3"]],\
     ["@awesome-dev/server-common", ["virtual:2952eeb9b6dd026871158e2aab7a79709ee9146fee46f705f922e4eec65b0625e9751e4d4934e04ecfb7def314f36c97401a055553e627529e70fd6bf57d80a8#workspace:packages/server/common", "workspace:packages/server/common"]],\
+    ["@awesome-dev/server-messageme", ["workspace:packages/server/messageme"]],\
     ["@awesome-dev/server-typeorm", ["virtual:23de94e3b62182955e09215e8ba73068f57c4552ffece876ef47af85a97f0cf754f3a836fbc1d49eb12fc70795bf196b1b9c30a398fcc0aeaa3d5d2eb40513aa#workspace:packages/server/typeorm", "virtual:934d85025402283e4befb48ca6d3d18d2e790b1b2c50e7e1421147592ed83f0cd9679a329c4a32b1ccf319a7b57b4895f42903d598a1d330b66280b08baaef9d#workspace:packages/server/typeorm", "workspace:packages/server/typeorm"]],\
     ["packages", ["workspace:."]]\
   ],\
@@ -204,6 +209,22 @@ const RAW_RUNTIME_STATE =
           ["class-validator", "npm:0.14.1"],\
           ["date-fns-tz", "virtual:23de94e3b62182955e09215e8ba73068f57c4552ffece876ef47af85a97f0cf754f3a836fbc1d49eb12fc70795bf196b1b9c30a398fcc0aeaa3d5d2eb40513aa#npm:2.0.0"],\
           ["reflect-metadata", "npm:0.2.1"],\
+          ["rxjs", "npm:7.8.1"],\
+          ["ts-jest", "virtual:2952eeb9b6dd026871158e2aab7a79709ee9146fee46f705f922e4eec65b0625e9751e4d4934e04ecfb7def314f36c97401a055553e627529e70fd6bf57d80a8#npm:29.1.2"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@awesome-dev/server-messageme", [\
+      ["workspace:packages/server/messageme", {\
+        "packageLocation": "./packages/server/messageme/",\
+        "packageDependencies": [\
+          ["@awesome-dev/server-messageme", "workspace:packages/server/messageme"],\
+          ["@awesome-dev/jest", "virtual:2952eeb9b6dd026871158e2aab7a79709ee9146fee46f705f922e4eec65b0625e9751e4d4934e04ecfb7def314f36c97401a055553e627529e70fd6bf57d80a8#workspace:packages/common/jest"],\
+          ["@jest/globals", "npm:29.7.0"],\
+          ["@nestjs/common", "virtual:2952eeb9b6dd026871158e2aab7a79709ee9146fee46f705f922e4eec65b0625e9751e4d4934e04ecfb7def314f36c97401a055553e627529e70fd6bf57d80a8#npm:10.3.3"],\
+          ["@nestjs/core", "virtual:bec864cff48bb1e0419af3a3ac28f1533b6ec262f46ff173c532ac01aeaac8e6141258355b98a31fa61ca7ba92638592ffde4a184b928acb5c706c7ceeed2e95#npm:10.3.3"],\
+          ["axios", "npm:1.6.7"],\
           ["rxjs", "npm:7.8.1"],\
           ["ts-jest", "virtual:2952eeb9b6dd026871158e2aab7a79709ee9146fee46f705f922e4eec65b0625e9751e4d4934e04ecfb7def314f36c97401a055553e627529e70fd6bf57d80a8#npm:29.1.2"]\
         ],\
@@ -4794,6 +4815,18 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["axios", [\
+      ["npm:1.6.7", {\
+        "packageLocation": "../../../../.yarn/berry/cache/axios-npm-1.6.7-d7b9974d1b-10c0.zip/node_modules/axios/",\
+        "packageDependencies": [\
+          ["axios", "npm:1.6.7"],\
+          ["follow-redirects", "virtual:d7b9974d1bba76881cc57a280a16dd4914416a6fc4923c2efbb6328057412974da1e719cef1530b7a62b97d85d828f7e1d49b5f6de3b5b0854d49902ec87827c#npm:1.15.5"],\
+          ["form-data", "npm:4.0.0"],\
+          ["proxy-from-env", "npm:1.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["babel-jest", [\
       ["npm:26.6.3", {\
         "packageLocation": "../../../../.yarn/berry/cache/babel-jest-npm-26.6.3-5630fee2b8-10c0.zip/node_modules/babel-jest/",\
@@ -6860,6 +6893,28 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../.yarn/berry/cache/flatted-npm-3.2.9-0462256d3c-10c0.zip/node_modules/flatted/",\
         "packageDependencies": [\
           ["flatted", "npm:3.2.9"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["follow-redirects", [\
+      ["npm:1.15.5", {\
+        "packageLocation": "../../../../.yarn/berry/cache/follow-redirects-npm-1.15.5-9d14db76ca-10c0.zip/node_modules/follow-redirects/",\
+        "packageDependencies": [\
+          ["follow-redirects", "npm:1.15.5"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:d7b9974d1bba76881cc57a280a16dd4914416a6fc4923c2efbb6328057412974da1e719cef1530b7a62b97d85d828f7e1d49b5f6de3b5b0854d49902ec87827c#npm:1.15.5", {\
+        "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-393395f3f6/5/.yarn/berry/cache/follow-redirects-npm-1.15.5-9d14db76ca-10c0.zip/node_modules/follow-redirects/",\
+        "packageDependencies": [\
+          ["follow-redirects", "virtual:d7b9974d1bba76881cc57a280a16dd4914416a6fc4923c2efbb6328057412974da1e719cef1530b7a62b97d85d828f7e1d49b5f6de3b5b0854d49902ec87827c#npm:1.15.5"],\
+          ["@types/debug", null],\
+          ["debug", null]\
+        ],\
+        "packagePeers": [\
+          "@types/debug",\
+          "debug"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -10760,6 +10815,15 @@ const RAW_RUNTIME_STATE =
           ["proxy-addr", "npm:2.0.7"],\
           ["forwarded", "npm:0.2.0"],\
           ["ipaddr.js", "npm:1.9.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["proxy-from-env", [\
+      ["npm:1.1.0", {\
+        "packageLocation": "../../../../.yarn/berry/cache/proxy-from-env-npm-1.1.0-c13d07f26b-10c0.zip/node_modules/proxy-from-env/",\
+        "packageDependencies": [\
+          ["proxy-from-env", "npm:1.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
