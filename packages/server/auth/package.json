@@ -31,5 +31,8 @@
     "@nestjs/common": "*",
     "express": "*",
     "rxjs": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

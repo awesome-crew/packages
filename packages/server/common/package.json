@@ -35,5 +35,8 @@
     "date-fns-tz": "*",
     "reflect-metadata": "*",
     "rxjs": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

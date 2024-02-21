@@ -41,5 +41,8 @@
     "mysql2": "^3.9.1",
     "rxjs": "*",
     "ts-node": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

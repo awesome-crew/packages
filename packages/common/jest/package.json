@@ -10,6 +10,7 @@
   "license": "UNLICENSED",
   "main": "src/index.js",
   "publishConfig": {
+    "access": "public",
     "main": "src/index.js",
     "types": "src/index.js",
     "module": "src/index.js"
