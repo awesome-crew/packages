@@ -41,6 +41,7 @@ __metadata:
     "@awesome-dev/jest": "workspace:^"
     "@awesome-dev/server-common": "workspace:^"
     "@awesome-dev/server-typeorm": "workspace:^"
+    "@awesome-dev/utils": "workspace:^"
     "@jest/globals": "npm:^29.7.0"
     "@nestjs/common": "npm:^10.3.3"
     "@nestjs/core": "npm:^10.3.3"
@@ -184,7 +185,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@awesome-dev/utils@workspace:packages/common/utils":
+"@awesome-dev/utils@workspace:^, @awesome-dev/utils@workspace:packages/common/utils":
   version: 0.0.0-use.local
   resolution: "@awesome-dev/utils@workspace:packages/common/utils"
   dependencies:
