@@ -1,0 +1,12 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "module": "commonjs",
+    "outDir": "./dist",
+    "strictPropertyInitialization": false,
+    "emitDecoratorMetadata": true,
+    "declaration": true
+  },
+  "include": ["src"]
+}
