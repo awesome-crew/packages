@@ -2,7 +2,7 @@ import { loadEnv } from '@awesome-dev/server-env';
 import { DynamicModule, Module, Provider } from '@nestjs/common';
 
 import { AdminAuthController, AdminCommonController } from './controllers';
-import { AdminAuthService, AdminGuard } from './providers';
+import { AdminAuthService } from './providers';
 
 import { AdminConfig } from './config';
 
@@ -28,7 +28,8 @@ export class AwesomeAdminModule {
     return {
       module: AwesomeAdminModule,
       controllers: [AdminAuthController, AdminCommonController],
-      providers: [ConfigProvider, AdminAuthService, AdminGuard],
+      providers: [ConfigProvider, AdminAuthService],
+      exports: [ConfigProvider, AdminAuthService],
     };
   }
 }
