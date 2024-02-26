@@ -17,5 +17,5 @@ export function loadEnv<K extends string>(propNames: readonly K[], strict = true
     });
   }
 
-  return env;
+  return env as Record<K, string>;
 }
