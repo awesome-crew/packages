@@ -1,3 +1,5 @@
+export * from './controllers';
 export * from './decorators';
 
-export * from './base-admin.controller';
+export * from './config';
+export * from './module';
