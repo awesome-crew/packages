@@ -1,4 +1,5 @@
 import { FindOneOptions } from '@awesome-dev/server-typeorm';
+import { PartialDeep } from '@awesome-dev/typings';
 import { HttpStatus } from '@nestjs/common';
 import { instanceToPlain } from 'class-transformer';
 
@@ -11,7 +12,7 @@ import { BaseRepository } from './base.repository';
 export type EntityRelations<Entity> = Array<keyof Entity | `${string & keyof Entity}.${string}`>;
 
 type EntityClass<Entity> = {
-  new (partial: Partial<Entity>): Entity;
+  new (partial: PartialDeep<Entity>): Entity;
 };
 
 export abstract class BaseService<
@@ -59,11 +60,11 @@ export abstract class BaseService<
     }
   }
 
-  create(partial: Partial<Entity>) {
+  create(partial: PartialDeep<Entity>) {
     return this.repository.save(new (this.repository.target as EntityClass<Entity>)(partial));
   }
 
-  async update(id: number, partial: Partial<Entity>) {
+  async update(id: number, partial: PartialDeep<Entity>) {
     const existing = await this.get(id);
 
     return this.repository.save(

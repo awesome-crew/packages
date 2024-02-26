@@ -2,6 +2,9 @@
   "name": "packages",
   "private": true,
   "packageManager": "yarn@4.1.0",
+  "scripts": {
+    "check:type": "yarn workspaces foreach --all -p -t run check:type"
+  },
   "devDependencies": {
     "@types/eslint": "^8",
     "@types/jest": "^29.5.12",

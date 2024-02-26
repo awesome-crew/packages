@@ -4,10 +4,11 @@ import {
   UpdateDateColumn,
   BaseEntity as TypeORMBaseEntity,
 } from '@awesome-dev/server-typeorm';
+import { PartialDeep } from '@awesome-dev/typings';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class BaseIdEntity extends TypeORMBaseEntity {
-  constructor(attrs?: Partial<BaseIdEntity>) {
+  constructor(attrs?: PartialDeep<BaseIdEntity>) {
     super();
     if (!attrs) {
       return;

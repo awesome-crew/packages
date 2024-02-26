@@ -1,6 +1,6 @@
 {
   "name": "@awesome-dev/server-admin",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -17,6 +17,7 @@
     "@awesome-dev/server-aws-s3": "workspace:^",
     "@awesome-dev/server-common": "workspace:^",
     "@awesome-dev/server-typeorm": "workspace:^",
+    "@awesome-dev/typings": "workspace:^",
     "@jest/globals": "^29.7.0",
     "@nestjs/common": "^10.3.3",
     "@nestjs/core": "^10.3.3",

@@ -4,6 +4,7 @@ import {
   ListOptions,
   ListOptionsQuery,
 } from '@awesome-dev/server-common';
+import { PartialDeep } from '@awesome-dev/typings';
 import { Body, Delete, Get, Param, ParseIntPipe, Patch, Post } from '@nestjs/common';
 
 export abstract class BaseAdminController<Entity extends BaseIdEntity> {
@@ -20,7 +21,7 @@ export abstract class BaseAdminController<Entity extends BaseIdEntity> {
   }
 
   @Post()
-  create(@Body() body: Partial<Entity>) {
+  create(@Body() body: PartialDeep<Entity>) {
     return this.service.create(body);
   }
 
@@ -30,7 +31,7 @@ export abstract class BaseAdminController<Entity extends BaseIdEntity> {
   }
 
   @Patch('/:id')
-  update(@Param('id', ParseIntPipe) id: number, @Body() body: Partial<Entity>) {
+  update(@Param('id', ParseIntPipe) id: number, @Body() body: PartialDeep<Entity>) {
     return this.service.update(id, body);
   }
 

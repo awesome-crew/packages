@@ -43,6 +43,7 @@ __metadata:
     "@awesome-dev/server-common": "workspace:^"
     "@awesome-dev/server-env": "workspace:^"
     "@awesome-dev/server-typeorm": "workspace:^"
+    "@awesome-dev/typings": "workspace:^"
     "@awesome-dev/utils": "workspace:^"
     "@jest/globals": "npm:^29.7.0"
     "@nestjs/common": "npm:^10.3.3"
@@ -117,6 +118,7 @@ __metadata:
   dependencies:
     "@awesome-dev/jest": "workspace:^"
     "@awesome-dev/server-typeorm": "workspace:^"
+    "@awesome-dev/typings": "workspace:^"
     "@faker-js/faker": "npm:^8.4.1"
     "@jest/globals": "npm:^29.7.0"
     "@nestjs/common": "npm:^10.3.3"
@@ -205,7 +207,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@awesome-dev/typings@workspace:packages/common/typings":
+"@awesome-dev/typings@workspace:^, @awesome-dev/typings@workspace:packages/common/typings":
   version: 0.0.0-use.local
   resolution: "@awesome-dev/typings@workspace:packages/common/typings"
   dependencies:
