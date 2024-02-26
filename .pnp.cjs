@@ -140,6 +140,7 @@ const RAW_RUNTIME_STATE =
           ["@awesome-dev/server-admin", "workspace:packages/server/admin"],\
           ["@awesome-dev/jest", "virtual:664b72fb9a5eaaf8740b8f3de380e8bcf5a4948040327de50095bdfb9caf6243ca1a3ebd45e341180ce179b3da7186422a8fb76bb369faf20ee9ada576ddd7d4#workspace:packages/common/jest"],\
           ["@awesome-dev/server-common", "virtual:4875840753fcefc2cb8b86ab8ca92094d094e9e146e33ec5b9cb8113260eb176f65e0ff8edb795620ab28af2d9ad8097e47fc23b75c88888e112b359953d7e1e#workspace:packages/server/common"],\
+          ["@awesome-dev/server-env", "workspace:packages/server/env"],\
           ["@awesome-dev/server-typeorm", "virtual:4875840753fcefc2cb8b86ab8ca92094d094e9e146e33ec5b9cb8113260eb176f65e0ff8edb795620ab28af2d9ad8097e47fc23b75c88888e112b359953d7e1e#workspace:packages/server/typeorm"],\
           ["@awesome-dev/utils", "workspace:packages/common/utils"],\
           ["@jest/globals", "npm:29.7.0"],\

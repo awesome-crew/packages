@@ -40,6 +40,7 @@ __metadata:
   dependencies:
     "@awesome-dev/jest": "workspace:^"
     "@awesome-dev/server-common": "workspace:^"
+    "@awesome-dev/server-env": "workspace:^"
     "@awesome-dev/server-typeorm": "workspace:^"
     "@awesome-dev/utils": "workspace:^"
     "@jest/globals": "npm:^29.7.0"
@@ -132,7 +133,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@awesome-dev/server-env@workspace:packages/server/env":
+"@awesome-dev/server-env@workspace:^, @awesome-dev/server-env@workspace:packages/server/env":
   version: 0.0.0-use.local
   resolution: "@awesome-dev/server-env@workspace:packages/server/env"
   dependencies:
