@@ -1,0 +1,24 @@
+{
+  "name": "@awesome-dev/utils",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "check:lint": "yarn run -T eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "check:type": "yarn run -T tsc --noEmit",
+    "check:test": "yarn run -T jest",
+    "check": "yarn run -T run-p 'check:*'",
+    "build": "yarn run -T rimraf -rf dist && yarn run -T tsc -p tsconfig.json",
+    "prepublish:npm": "yarn check && yarn build",
+    "publish:npm": "yarn prepublish:npm && yarn npm publish"
+  },
+  "devDependencies": {
+    "@awesome-dev/jest": "workspace:^",
+    "@jest/globals": "^29.7.0",
+    "ts-jest": "^29.1.2"
+  },
+  "packageManager": "yarn@4.1.0",
+  "publishConfig": {
+    "access": "public"
+  }
+}

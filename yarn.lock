@@ -34,6 +34,31 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@awesome-dev/server-admin@workspace:packages/server/admin":
+  version: 0.0.0-use.local
+  resolution: "@awesome-dev/server-admin@workspace:packages/server/admin"
+  dependencies:
+    "@awesome-dev/jest": "workspace:^"
+    "@awesome-dev/server-common": "workspace:^"
+    "@awesome-dev/server-typeorm": "workspace:^"
+    "@jest/globals": "npm:^29.7.0"
+    "@nestjs/common": "npm:^10.3.3"
+    "@nestjs/core": "npm:^10.3.3"
+    "@nestjs/swagger": "npm:^7.3.0"
+    class-validator: "npm:^0.14.1"
+    rxjs: "npm:^7.8.1"
+    ts-jest: "npm:^29.1.2"
+  peerDependencies:
+    "@awesome-dev/server-common": "*"
+    "@awesome-dev/server-typeorm": "*"
+    "@nestjs/common": "*"
+    "@nestjs/core": "*"
+    "@nestjs/swagger": "*"
+    class-validator: "*"
+    rxjs: "*"
+  languageName: unknown
+  linkType: soft
+
 "@awesome-dev/server-auth@workspace:packages/server/auth":
   version: 0.0.0-use.local
   resolution: "@awesome-dev/server-auth@workspace:packages/server/auth"
@@ -156,6 +181,16 @@ __metadata:
     ts-node: "*"
   bin:
     awesome-typeorm: dist/cli-ts-node-commonjs.js
+  languageName: unknown
+  linkType: soft
+
+"@awesome-dev/utils@workspace:packages/common/utils":
+  version: 0.0.0-use.local
+  resolution: "@awesome-dev/utils@workspace:packages/common/utils"
+  dependencies:
+    "@awesome-dev/jest": "workspace:^"
+    "@jest/globals": "npm:^29.7.0"
+    ts-jest: "npm:^29.1.2"
   languageName: unknown
   linkType: soft
 
