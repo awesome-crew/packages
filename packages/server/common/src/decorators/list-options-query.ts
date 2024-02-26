@@ -3,11 +3,14 @@ import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 
 import { parseFilter } from '../helpers';
 
-export const ListOptionsQuery = <Entity>(options?: { excludes?: string[] }) =>
+export const ListOptionsQuery = <Entity>(options?: {
+  excludes?: string[];
+  acceptRelations?: boolean;
+}) =>
   createParamDecorator(
     async (_data: unknown, ctx: ExecutionContext): Promise<ListOptions<Entity>> => {
       const { query } = ctx.switchToHttp().getRequest();
-      const { offset, limit, order, ...where } = query;
+      const { offset, limit, order, relations, ...where } = query;
 
       const { excludes } = options ?? {};
       if (excludes?.length) {
@@ -22,7 +25,8 @@ export const ListOptionsQuery = <Entity>(options?: { excludes?: string[] }) =>
           offset,
           limit,
         })
-        .order(order);
+        .order(order)
+        .relation(options?.acceptRelations ? relations : []);
     }
   )();
 

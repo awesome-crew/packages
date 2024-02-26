@@ -1,6 +1,6 @@
 {
   "name": "@awesome-dev/server-common",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -10,7 +10,7 @@
     "check": "yarn run -T run-p 'check:*'",
     "build": "yarn run -T rimraf -rf dist && yarn run -T tsc -p tsconfig.json",
     "prepublish:npm": "yarn check && yarn build",
-    "publish:npm": "yarn npm publish"
+    "publish:npm": "yarn prepublish:npm && yarn npm publish"
   },
   "devDependencies": {
     "@awesome-dev/jest": "workspace:^",

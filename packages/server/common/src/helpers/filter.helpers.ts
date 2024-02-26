@@ -26,12 +26,24 @@ const parseValue = (value: unknown) => {
   return value;
 };
 
-export const parseFilter = (filter: unknown) => {
+export const parseFilter = (filter: unknown): Record<string, unknown> => {
   return Object.keys(filter ?? {}).reduce((acc, key) => {
     const value = (filter as any)[key];
     if (value === undefined) {
       return acc;
     }
+
+    // {key1}.{key2} 형태의 필터링을 위한 로직 추가
+    const regex = /(.+?)\.(.+)/;
+    if (regex.test(key)) {
+      const [key1, rest] = key.match(regex)!.slice(1);
+
+      return {
+        ...acc,
+        [key1]: parseFilter({ [rest]: value }),
+      };
+    }
+
     if (/Include$/.test(key)) {
       return {
         ...acc,

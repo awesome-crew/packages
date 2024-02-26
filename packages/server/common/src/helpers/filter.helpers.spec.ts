@@ -94,5 +94,15 @@ describe('filter helpers', () => {
         });
       });
     });
+
+    it('중첩된 경우도 잘 처리한다', () => {
+      const given = { ['author.ageMte']: faker.number.int() };
+
+      const result = parseFilter(given);
+
+      expect(result).toEqual({
+        author: { age: MoreThanOrEqual(given['author.ageMte']) },
+      });
+    });
   });
 });
