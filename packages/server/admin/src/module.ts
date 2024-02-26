@@ -8,7 +8,7 @@ import { AdminConfig } from './config';
 
 @Module({})
 export class AwesomeAdminModule {
-  forRoot(): DynamicModule {
+  static forRoot(): DynamicModule {
     const config = loadEnv([
       'ADMIN_USER_ID',
       'ADMIN_USER_PASSWORD',
