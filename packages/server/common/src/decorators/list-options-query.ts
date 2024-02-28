@@ -10,7 +10,7 @@ export const ListOptionsQuery = <Entity>(options?: {
   createParamDecorator(
     async (_data: unknown, ctx: ExecutionContext): Promise<ListOptions<Entity>> => {
       const { query } = ctx.switchToHttp().getRequest();
-      const { offset, limit, order, relations, ...where } = query;
+      const { offset, limit, order, relations = [], ...where } = query;
 
       const { excludes } = options ?? {};
       if (excludes?.length) {
@@ -19,14 +19,17 @@ export const ListOptionsQuery = <Entity>(options?: {
         }
       }
 
+      const parsedResult = parseFilter(where);
+      const _relations = parsedResult.relations.concat(options?.acceptRelations ? relations : []);
+
       return new ListOptions<Entity>()
-        .where(parseFilter(where))
+        .where(parsedResult.where)
         .page({
           offset,
           limit,
         })
         .order(order)
-        .relation(options?.acceptRelations ? relations : []);
+        .relation(_relations as Relation<Entity>[]);
     }
   )();
 
