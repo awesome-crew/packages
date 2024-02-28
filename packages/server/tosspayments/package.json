@@ -1,6 +1,6 @@
 {
   "name": "@awesome-dev/server-tosspayments",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -18,16 +18,12 @@
     "@jest/globals": "^29.7.0",
     "@nestjs/common": "^10.3.3",
     "@nestjs/core": "^10.3.3",
-    "@nestjs/swagger": "^7.3.0",
-    "class-validator": "^0.14.1",
     "rxjs": "^7.8.1",
     "ts-jest": "^29.1.2"
   },
   "peerDependencies": {
     "@nestjs/common": "*",
     "@nestjs/core": "*",
-    "@nestjs/swagger": "*",
-    "class-validator": "*",
     "rxjs": "*"
   },
   "packageManager": "yarn@4.1.0",

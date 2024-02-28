@@ -388,11 +388,9 @@ const RAW_RUNTIME_STATE =
           ["@awesome-dev/server-env", "workspace:packages/server/env"],\
           ["@awesome-dev/typings", "workspace:packages/common/typings"],\
           ["@jest/globals", "npm:29.7.0"],\
-          ["@nestjs/common", "virtual:4875840753fcefc2cb8b86ab8ca92094d094e9e146e33ec5b9cb8113260eb176f65e0ff8edb795620ab28af2d9ad8097e47fc23b75c88888e112b359953d7e1e#npm:10.3.3"],\
-          ["@nestjs/core", "virtual:cd7a3a114d81539d406e379d849c5ceb5ec5d7d0eda8227862cf4aff7958aa23c86616719dc3af98fc21a4b5ab07bfa491fd0b853c96f56bf8037a2f50d40cd1#npm:10.3.3"],\
-          ["@nestjs/swagger", "virtual:cd7a3a114d81539d406e379d849c5ceb5ec5d7d0eda8227862cf4aff7958aa23c86616719dc3af98fc21a4b5ab07bfa491fd0b853c96f56bf8037a2f50d40cd1#npm:7.3.0"],\
+          ["@nestjs/common", "virtual:2952eeb9b6dd026871158e2aab7a79709ee9146fee46f705f922e4eec65b0625e9751e4d4934e04ecfb7def314f36c97401a055553e627529e70fd6bf57d80a8#npm:10.3.3"],\
+          ["@nestjs/core", "virtual:bec864cff48bb1e0419af3a3ac28f1533b6ec262f46ff173c532ac01aeaac8e6141258355b98a31fa61ca7ba92638592ffde4a184b928acb5c706c7ceeed2e95#npm:10.3.3"],\
           ["axios", "npm:1.6.7"],\
-          ["class-validator", "npm:0.14.1"],\
           ["rxjs", "npm:7.8.1"],\
           ["ts-jest", "virtual:664b72fb9a5eaaf8740b8f3de380e8bcf5a4948040327de50095bdfb9caf6243ca1a3ebd45e341180ce179b3da7186422a8fb76bb369faf20ee9ada576ddd7d4#npm:29.1.2"]\
         ],\
