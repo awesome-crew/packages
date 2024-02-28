@@ -22,7 +22,12 @@ export abstract class BaseService<
   abstract repository: BaseRepository<Entity>;
 
   get(id: number, relations?: Relations): Promise<Entity | null> {
-    return this.repository.get(id, relations as unknown as string[]);
+    const _relations = Array.isArray(relations) ? relations : [relations];
+
+    return this.repository.get(
+      id,
+      _relations.filter(x => x != null)
+    );
   }
 
   async list(options?: ListOptions<Entity>): Promise<Entity[]> {
