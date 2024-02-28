@@ -176,6 +176,30 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@awesome-dev/server-tosspayments@workspace:packages/server/tosspayments":
+  version: 0.0.0-use.local
+  resolution: "@awesome-dev/server-tosspayments@workspace:packages/server/tosspayments"
+  dependencies:
+    "@awesome-dev/jest": "workspace:^"
+    "@awesome-dev/server-env": "workspace:^"
+    "@awesome-dev/typings": "workspace:^"
+    "@jest/globals": "npm:^29.7.0"
+    "@nestjs/common": "npm:^10.3.3"
+    "@nestjs/core": "npm:^10.3.3"
+    "@nestjs/swagger": "npm:^7.3.0"
+    axios: "npm:^1.6.7"
+    class-validator: "npm:^0.14.1"
+    rxjs: "npm:^7.8.1"
+    ts-jest: "npm:^29.1.2"
+  peerDependencies:
+    "@nestjs/common": "*"
+    "@nestjs/core": "*"
+    "@nestjs/swagger": "*"
+    class-validator: "*"
+    rxjs: "*"
+  languageName: unknown
+  linkType: soft
+
 "@awesome-dev/server-typeorm@workspace:^, @awesome-dev/server-typeorm@workspace:packages/server/typeorm":
   version: 0.0.0-use.local
   resolution: "@awesome-dev/server-typeorm@workspace:packages/server/typeorm"

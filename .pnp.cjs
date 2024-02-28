@@ -50,6 +50,10 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:packages/server/messageme"\
     },\
     {\
+      "name": "@awesome-dev/server-tosspayments",\
+      "reference": "workspace:packages/server/tosspayments"\
+    },\
+    {\
       "name": "@awesome-dev/server-typeorm",\
       "reference": "workspace:packages/server/typeorm"\
     }\
@@ -64,6 +68,7 @@ const RAW_RUNTIME_STATE =
     ["@awesome-dev/server-common", ["virtual:2952eeb9b6dd026871158e2aab7a79709ee9146fee46f705f922e4eec65b0625e9751e4d4934e04ecfb7def314f36c97401a055553e627529e70fd6bf57d80a8#workspace:packages/server/common", "virtual:4875840753fcefc2cb8b86ab8ca92094d094e9e146e33ec5b9cb8113260eb176f65e0ff8edb795620ab28af2d9ad8097e47fc23b75c88888e112b359953d7e1e#workspace:packages/server/common", "workspace:packages/server/common"]],\
     ["@awesome-dev/server-env", ["workspace:packages/server/env"]],\
     ["@awesome-dev/server-messageme", ["workspace:packages/server/messageme"]],\
+    ["@awesome-dev/server-tosspayments", ["workspace:packages/server/tosspayments"]],\
     ["@awesome-dev/server-typeorm", ["virtual:23de94e3b62182955e09215e8ba73068f57c4552ffece876ef47af85a97f0cf754f3a836fbc1d49eb12fc70795bf196b1b9c30a398fcc0aeaa3d5d2eb40513aa#workspace:packages/server/typeorm", "virtual:4875840753fcefc2cb8b86ab8ca92094d094e9e146e33ec5b9cb8113260eb176f65e0ff8edb795620ab28af2d9ad8097e47fc23b75c88888e112b359953d7e1e#workspace:packages/server/typeorm", "virtual:934d85025402283e4befb48ca6d3d18d2e790b1b2c50e7e1421147592ed83f0cd9679a329c4a32b1ccf319a7b57b4895f42903d598a1d330b66280b08baaef9d#workspace:packages/server/typeorm", "workspace:packages/server/typeorm"]],\
     ["@awesome-dev/typings", ["workspace:packages/common/typings"]],\
     ["@awesome-dev/utils", ["workspace:packages/common/utils"]],\
@@ -362,6 +367,26 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@awesome-dev/server-messageme", "workspace:packages/server/messageme"],\
           ["@awesome-dev/jest", "virtual:664b72fb9a5eaaf8740b8f3de380e8bcf5a4948040327de50095bdfb9caf6243ca1a3ebd45e341180ce179b3da7186422a8fb76bb369faf20ee9ada576ddd7d4#workspace:packages/common/jest"],\
+          ["@jest/globals", "npm:29.7.0"],\
+          ["@nestjs/common", "virtual:4875840753fcefc2cb8b86ab8ca92094d094e9e146e33ec5b9cb8113260eb176f65e0ff8edb795620ab28af2d9ad8097e47fc23b75c88888e112b359953d7e1e#npm:10.3.3"],\
+          ["@nestjs/core", "virtual:cd7a3a114d81539d406e379d849c5ceb5ec5d7d0eda8227862cf4aff7958aa23c86616719dc3af98fc21a4b5ab07bfa491fd0b853c96f56bf8037a2f50d40cd1#npm:10.3.3"],\
+          ["@nestjs/swagger", "virtual:cd7a3a114d81539d406e379d849c5ceb5ec5d7d0eda8227862cf4aff7958aa23c86616719dc3af98fc21a4b5ab07bfa491fd0b853c96f56bf8037a2f50d40cd1#npm:7.3.0"],\
+          ["axios", "npm:1.6.7"],\
+          ["class-validator", "npm:0.14.1"],\
+          ["rxjs", "npm:7.8.1"],\
+          ["ts-jest", "virtual:664b72fb9a5eaaf8740b8f3de380e8bcf5a4948040327de50095bdfb9caf6243ca1a3ebd45e341180ce179b3da7186422a8fb76bb369faf20ee9ada576ddd7d4#npm:29.1.2"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@awesome-dev/server-tosspayments", [\
+      ["workspace:packages/server/tosspayments", {\
+        "packageLocation": "./packages/server/tosspayments/",\
+        "packageDependencies": [\
+          ["@awesome-dev/server-tosspayments", "workspace:packages/server/tosspayments"],\
+          ["@awesome-dev/jest", "virtual:664b72fb9a5eaaf8740b8f3de380e8bcf5a4948040327de50095bdfb9caf6243ca1a3ebd45e341180ce179b3da7186422a8fb76bb369faf20ee9ada576ddd7d4#workspace:packages/common/jest"],\
+          ["@awesome-dev/server-env", "workspace:packages/server/env"],\
+          ["@awesome-dev/typings", "workspace:packages/common/typings"],\
           ["@jest/globals", "npm:29.7.0"],\
           ["@nestjs/common", "virtual:4875840753fcefc2cb8b86ab8ca92094d094e9e146e33ec5b9cb8113260eb176f65e0ff8edb795620ab28af2d9ad8097e47fc23b75c88888e112b359953d7e1e#npm:10.3.3"],\
           ["@nestjs/core", "virtual:cd7a3a114d81539d406e379d849c5ceb5ec5d7d0eda8227862cf4aff7958aa23c86616719dc3af98fc21a4b5ab07bfa491fd0b853c96f56bf8037a2f50d40cd1#npm:10.3.3"],\
