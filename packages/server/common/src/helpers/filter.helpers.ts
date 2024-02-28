@@ -9,6 +9,7 @@ import {
   Not,
   Like,
 } from '@awesome-dev/server-typeorm';
+import { UnknownRecord } from '@awesome-dev/typings';
 import { BadRequestException } from '@nestjs/common';
 
 const { isArray } = Array;
@@ -26,8 +27,10 @@ const parseValue = (value: unknown) => {
   return value;
 };
 
-export const parseFilter = (filter: unknown): Record<string, unknown> => {
-  return Object.keys(filter ?? {}).reduce((acc, key) => {
+export const parseFilter = (filter: unknown) => {
+  const relations: string[] = [];
+
+  const where: UnknownRecord = Object.keys(filter ?? {}).reduce((acc, key) => {
     const value = (filter as any)[key];
     if (value === undefined) {
       return acc;
@@ -38,9 +41,13 @@ export const parseFilter = (filter: unknown): Record<string, unknown> => {
     if (regex.test(key)) {
       const [key1, rest] = key.match(regex)!.slice(1);
 
+      const key1Result = parseFilter({ [rest]: value });
+
+      relations.push(key1, ...key1Result.relations.map(x => `${key1}.${x}`));
+
       return {
         ...acc,
-        [key1]: parseFilter({ [rest]: value }),
+        [key1]: key1Result.where,
       };
     }
 
@@ -116,6 +123,11 @@ export const parseFilter = (filter: unknown): Record<string, unknown> => {
 
     return { ...acc, [key]: parseValue(value) };
   }, {});
+
+  return {
+    where,
+    relations,
+  };
 };
 
 export const parsePaginator = (offset: number, limit: number) => {
