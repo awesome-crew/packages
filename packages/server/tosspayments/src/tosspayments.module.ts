@@ -15,6 +15,7 @@ export class TosspaymentsModule {
     };
 
     return {
+      global: true,
       module: TosspaymentsModule,
       providers: [ConfigProvider, TosspaymentsService],
       exports: [ConfigProvider, TosspaymentsService],
