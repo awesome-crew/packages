@@ -49,6 +49,8 @@ export interface Payment {
   approvedAt: string;
 
   lastTransactionKey: string;
+
+  easyPay: EasyPay | null;
 }
 
 export interface Cancel {
@@ -63,4 +65,16 @@ export interface Cancel {
 export interface TosspaymentsErrorResponse {
   code: string;
   message: string;
+}
+
+export const EasyPayProvider = {
+  TOSSPAY: 'TOSSPAY',
+  NAVERPAY: 'NAVERPAY',
+  SAMSUNGPAY: 'SAMSUNGPAY',
+  KAKAOPAY: 'KAKAOPAY',
+};
+export type EasypayProvider = ValueOf<typeof EasyPayProvider>;
+
+export interface EasyPay {
+  provider: EasypayProvider;
 }
