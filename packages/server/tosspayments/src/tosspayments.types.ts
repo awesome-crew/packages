@@ -73,8 +73,8 @@ export const EasyPayProvider = {
   SAMSUNGPAY: 'SAMSUNGPAY',
   KAKAOPAY: 'KAKAOPAY',
 };
-export type EasypayProvider = ValueOf<typeof EasyPayProvider>;
+export type EasyPayProvider = ValueOf<typeof EasyPayProvider>;
 
 export interface EasyPay {
-  provider: EasypayProvider;
+  provider: EasyPayProvider;
 }
