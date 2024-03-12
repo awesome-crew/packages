@@ -6,7 +6,6 @@
     "check:lint": "yarn run -T eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "check:type": "yarn run -T tsc --noEmit",
     "check": "yarn run -T run-p 'check:*'",
-    "build": "yarn run -T rimraf -rf dist && yarn run -T tsc -p tsconfig.json",
     "prepublish:npm": "yarn check",
     "publish:npm": "yarn prepublish:npm && yarn npm publish"
   },
