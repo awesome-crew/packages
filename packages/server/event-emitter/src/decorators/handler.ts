@@ -4,7 +4,7 @@ import { OnEvent } from '@nestjs/event-emitter';
 import { BaseEvent, parseEventName } from '../base-event';
 
 type TargetEvent = {
-  new (): BaseEvent;
+  new (...args: any[]): BaseEvent;
 };
 
 export function Handler(targetEvent: TargetEvent) {
