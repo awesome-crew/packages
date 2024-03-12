@@ -586,6 +586,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@awesome-dev/utils", "workspace:packages/common/utils"],\
           ["@awesome-dev/jest", "virtual:664b72fb9a5eaaf8740b8f3de380e8bcf5a4948040327de50095bdfb9caf6243ca1a3ebd45e341180ce179b3da7186422a8fb76bb369faf20ee9ada576ddd7d4#workspace:packages/common/jest"],\
+          ["@awesome-dev/typings", "workspace:packages/common/typings"],\
           ["@jest/globals", "npm:29.7.0"],\
           ["ts-jest", "virtual:664b72fb9a5eaaf8740b8f3de380e8bcf5a4948040327de50095bdfb9caf6243ca1a3ebd45e341180ce179b3da7186422a8fb76bb369faf20ee9ada576ddd7d4#npm:29.1.2"]\
         ],\

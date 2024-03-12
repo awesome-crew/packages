@@ -260,6 +260,7 @@ __metadata:
   resolution: "@awesome-dev/utils@workspace:packages/common/utils"
   dependencies:
     "@awesome-dev/jest": "workspace:^"
+    "@awesome-dev/typings": "workspace:^"
     "@jest/globals": "npm:^29.7.0"
     ts-jest: "npm:^29.1.2"
   languageName: unknown
