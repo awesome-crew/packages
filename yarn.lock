@@ -154,6 +154,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@awesome-dev/server-event-emitter@workspace:packages/server/event-emitter":
+  version: 0.0.0-use.local
+  resolution: "@awesome-dev/server-event-emitter@workspace:packages/server/event-emitter"
+  dependencies:
+    "@awesome-dev/jest": "workspace:^"
+    "@awesome-dev/typings": "workspace:^"
+    "@jest/globals": "npm:^29.7.0"
+    "@nestjs/common": "npm:^10.3.3"
+    "@nestjs/core": "npm:^10.3.3"
+    "@nestjs/event-emitter": "npm:^2.0.4"
+    rxjs: "npm:^7.8.1"
+    ts-jest: "npm:^29.1.2"
+  peerDependencies:
+    "@nestjs/common": "*"
+    "@nestjs/core": "*"
+    rxjs: "*"
+  languageName: unknown
+  linkType: soft
+
 "@awesome-dev/server-messageme@workspace:packages/server/messageme":
   version: 0.0.0-use.local
   resolution: "@awesome-dev/server-messageme@workspace:packages/server/messageme"
@@ -2187,6 +2206,18 @@ __metadata:
     "@nestjs/websockets":
       optional: true
   checksum: 10c0/691b3e6dd1aa9bd6e4af56a6d434b05c492984a1d656810e987819f49c1565cc8a01276bf01c6d4baa4aefa74a94027335b892eb285c4c8d9d58e5a593632f4c
+  languageName: node
+  linkType: hard
+
+"@nestjs/event-emitter@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "@nestjs/event-emitter@npm:2.0.4"
+  dependencies:
+    eventemitter2: "npm:6.4.9"
+  peerDependencies:
+    "@nestjs/common": ^8.0.0 || ^9.0.0 || ^10.0.0
+    "@nestjs/core": ^8.0.0 || ^9.0.0 || ^10.0.0
+  checksum: 10c0/14fb3053a94870ff7931dbfcb47e1456860e846700ceaa88f6f2e932e7dddc0d77187019da4a51053d95a247f629faf3dba262754d24abb02a66414094fff6b9
   languageName: node
   linkType: hard
 
@@ -5493,6 +5524,13 @@ __metadata:
   version: 1.8.1
   resolution: "etag@npm:1.8.1"
   checksum: 10c0/12be11ef62fb9817314d790089a0a49fae4e1b50594135dcb8076312b7d7e470884b5100d249b28c18581b7fd52f8b485689ffae22a11ed9ec17377a33a08f84
+  languageName: node
+  linkType: hard
+
+"eventemitter2@npm:6.4.9":
+  version: 6.4.9
+  resolution: "eventemitter2@npm:6.4.9"
+  checksum: 10c0/b2adf7d9f1544aa2d95ee271b0621acaf1e309d85ebcef1244fb0ebc7ab0afa6ffd5e371535d0981bc46195ad67fd6ff57a8d1db030584dee69aa5e371a27ea7
   languageName: node
   linkType: hard
 

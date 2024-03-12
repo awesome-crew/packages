@@ -46,6 +46,10 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:packages/server/env"\
     },\
     {\
+      "name": "@awesome-dev/server-event-emitter",\
+      "reference": "workspace:packages/server/event-emitter"\
+    },\
+    {\
       "name": "@awesome-dev/server-messageme",\
       "reference": "workspace:packages/server/messageme"\
     },\
@@ -71,6 +75,7 @@ const RAW_RUNTIME_STATE =
     ["@awesome-dev/server-aws-s3", ["virtual:4875840753fcefc2cb8b86ab8ca92094d094e9e146e33ec5b9cb8113260eb176f65e0ff8edb795620ab28af2d9ad8097e47fc23b75c88888e112b359953d7e1e#workspace:packages/server/aws-s3", "workspace:packages/server/aws-s3"]],\
     ["@awesome-dev/server-common", ["virtual:2952eeb9b6dd026871158e2aab7a79709ee9146fee46f705f922e4eec65b0625e9751e4d4934e04ecfb7def314f36c97401a055553e627529e70fd6bf57d80a8#workspace:packages/server/common", "virtual:4875840753fcefc2cb8b86ab8ca92094d094e9e146e33ec5b9cb8113260eb176f65e0ff8edb795620ab28af2d9ad8097e47fc23b75c88888e112b359953d7e1e#workspace:packages/server/common", "workspace:packages/server/common"]],\
     ["@awesome-dev/server-env", ["workspace:packages/server/env"]],\
+    ["@awesome-dev/server-event-emitter", ["workspace:packages/server/event-emitter"]],\
     ["@awesome-dev/server-messageme", ["workspace:packages/server/messageme"]],\
     ["@awesome-dev/server-tosspayments", ["workspace:packages/server/tosspayments"]],\
     ["@awesome-dev/server-typeorm", ["virtual:23de94e3b62182955e09215e8ba73068f57c4552ffece876ef47af85a97f0cf754f3a836fbc1d49eb12fc70795bf196b1b9c30a398fcc0aeaa3d5d2eb40513aa#workspace:packages/server/typeorm", "virtual:4875840753fcefc2cb8b86ab8ca92094d094e9e146e33ec5b9cb8113260eb176f65e0ff8edb795620ab28af2d9ad8097e47fc23b75c88888e112b359953d7e1e#workspace:packages/server/typeorm", "virtual:934d85025402283e4befb48ca6d3d18d2e790b1b2c50e7e1421147592ed83f0cd9679a329c4a32b1ccf319a7b57b4895f42903d598a1d330b66280b08baaef9d#workspace:packages/server/typeorm", "workspace:packages/server/typeorm"]],\
@@ -361,6 +366,23 @@ const RAW_RUNTIME_STATE =
           ["@awesome-dev/jest", "virtual:664b72fb9a5eaaf8740b8f3de380e8bcf5a4948040327de50095bdfb9caf6243ca1a3ebd45e341180ce179b3da7186422a8fb76bb369faf20ee9ada576ddd7d4#workspace:packages/common/jest"],\
           ["@jest/globals", "npm:29.7.0"],\
           ["dotenv", "npm:16.4.5"],\
+          ["ts-jest", "virtual:664b72fb9a5eaaf8740b8f3de380e8bcf5a4948040327de50095bdfb9caf6243ca1a3ebd45e341180ce179b3da7186422a8fb76bb369faf20ee9ada576ddd7d4#npm:29.1.2"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@awesome-dev/server-event-emitter", [\
+      ["workspace:packages/server/event-emitter", {\
+        "packageLocation": "./packages/server/event-emitter/",\
+        "packageDependencies": [\
+          ["@awesome-dev/server-event-emitter", "workspace:packages/server/event-emitter"],\
+          ["@awesome-dev/jest", "virtual:664b72fb9a5eaaf8740b8f3de380e8bcf5a4948040327de50095bdfb9caf6243ca1a3ebd45e341180ce179b3da7186422a8fb76bb369faf20ee9ada576ddd7d4#workspace:packages/common/jest"],\
+          ["@awesome-dev/typings", "workspace:packages/common/typings"],\
+          ["@jest/globals", "npm:29.7.0"],\
+          ["@nestjs/common", "virtual:2952eeb9b6dd026871158e2aab7a79709ee9146fee46f705f922e4eec65b0625e9751e4d4934e04ecfb7def314f36c97401a055553e627529e70fd6bf57d80a8#npm:10.3.3"],\
+          ["@nestjs/core", "virtual:bec864cff48bb1e0419af3a3ac28f1533b6ec262f46ff173c532ac01aeaac8e6141258355b98a31fa61ca7ba92638592ffde4a184b928acb5c706c7ceeed2e95#npm:10.3.3"],\
+          ["@nestjs/event-emitter", "virtual:dffa78dcc8789088359950f9e7907ba266da635de6b4e35863fb631227657be1fff98b88ddb0452b1e4aa30e609d620a9eab37f2f70df1dc61e35de63ccdc00f#npm:2.0.4"],\
+          ["rxjs", "npm:7.8.1"],\
           ["ts-jest", "virtual:664b72fb9a5eaaf8740b8f3de380e8bcf5a4948040327de50095bdfb9caf6243ca1a3ebd45e341180ce179b3da7186422a8fb76bb369faf20ee9ada576ddd7d4#npm:29.1.2"]\
         ],\
         "linkType": "SOFT"\
@@ -3440,6 +3462,33 @@ const RAW_RUNTIME_STATE =
           "@types/rxjs",\
           "reflect-metadata",\
           "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@nestjs/event-emitter", [\
+      ["npm:2.0.4", {\
+        "packageLocation": "../../../../.yarn/berry/cache/@nestjs-event-emitter-npm-2.0.4-aeab92c180-10c0.zip/node_modules/@nestjs/event-emitter/",\
+        "packageDependencies": [\
+          ["@nestjs/event-emitter", "npm:2.0.4"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:dffa78dcc8789088359950f9e7907ba266da635de6b4e35863fb631227657be1fff98b88ddb0452b1e4aa30e609d620a9eab37f2f70df1dc61e35de63ccdc00f#npm:2.0.4", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-event-emitter-virtual-c75da35648/5/.yarn/berry/cache/@nestjs-event-emitter-npm-2.0.4-aeab92c180-10c0.zip/node_modules/@nestjs/event-emitter/",\
+        "packageDependencies": [\
+          ["@nestjs/event-emitter", "virtual:dffa78dcc8789088359950f9e7907ba266da635de6b4e35863fb631227657be1fff98b88ddb0452b1e4aa30e609d620a9eab37f2f70df1dc61e35de63ccdc00f#npm:2.0.4"],\
+          ["@nestjs/common", "virtual:2952eeb9b6dd026871158e2aab7a79709ee9146fee46f705f922e4eec65b0625e9751e4d4934e04ecfb7def314f36c97401a055553e627529e70fd6bf57d80a8#npm:10.3.3"],\
+          ["@nestjs/core", "virtual:bec864cff48bb1e0419af3a3ac28f1533b6ec262f46ff173c532ac01aeaac8e6141258355b98a31fa61ca7ba92638592ffde4a184b928acb5c706c7ceeed2e95#npm:10.3.3"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["eventemitter2", "npm:6.4.9"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -7684,6 +7733,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../.yarn/berry/cache/etag-npm-1.8.1-54a3b989d9-10c0.zip/node_modules/etag/",\
         "packageDependencies": [\
           ["etag", "npm:1.8.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["eventemitter2", [\
+      ["npm:6.4.9", {\
+        "packageLocation": "../../../../.yarn/berry/cache/eventemitter2-npm-6.4.9-ba37798a18-10c0.zip/node_modules/eventemitter2/",\
+        "packageDependencies": [\
+          ["eventemitter2", "npm:6.4.9"]\
         ],\
         "linkType": "HARD"\
       }]\
