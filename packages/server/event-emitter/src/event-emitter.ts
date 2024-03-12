@@ -8,6 +8,6 @@ export class EventEmitter {
   constructor(private readonly eventEmitter: EventEmitter2) {}
 
   emit(event: BaseEvent) {
-    return this.eventEmitter.emit(event.code, event);
+    return this.eventEmitter.emit(BaseEvent.getEventName(event), event);
   }
 }

@@ -378,6 +378,7 @@ const RAW_RUNTIME_STATE =
           ["@awesome-dev/server-event-emitter", "workspace:packages/server/event-emitter"],\
           ["@awesome-dev/jest", "virtual:664b72fb9a5eaaf8740b8f3de380e8bcf5a4948040327de50095bdfb9caf6243ca1a3ebd45e341180ce179b3da7186422a8fb76bb369faf20ee9ada576ddd7d4#workspace:packages/common/jest"],\
           ["@awesome-dev/typings", "workspace:packages/common/typings"],\
+          ["@awesome-dev/utils", "workspace:packages/common/utils"],\
           ["@jest/globals", "npm:29.7.0"],\
           ["@nestjs/common", "virtual:2952eeb9b6dd026871158e2aab7a79709ee9146fee46f705f922e4eec65b0625e9751e4d4934e04ecfb7def314f36c97401a055553e627529e70fd6bf57d80a8#npm:10.3.3"],\
           ["@nestjs/core", "virtual:bec864cff48bb1e0419af3a3ac28f1533b6ec262f46ff173c532ac01aeaac8e6141258355b98a31fa61ca7ba92638592ffde4a184b928acb5c706c7ceeed2e95#npm:10.3.3"],\

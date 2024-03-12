@@ -160,6 +160,7 @@ __metadata:
   dependencies:
     "@awesome-dev/jest": "workspace:^"
     "@awesome-dev/typings": "workspace:^"
+    "@awesome-dev/utils": "workspace:^"
     "@jest/globals": "npm:^29.7.0"
     "@nestjs/common": "npm:^10.3.3"
     "@nestjs/core": "npm:^10.3.3"
