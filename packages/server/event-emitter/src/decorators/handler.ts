@@ -1,8 +1,12 @@
 import { applyDecorators } from '@nestjs/common';
 import { OnEvent } from '@nestjs/event-emitter';
 
-import { BaseEvent } from '../base-event';
+import { BaseEvent, parseEventName } from '../base-event';
 
-export function Handler(event: BaseEvent) {
-  return applyDecorators(OnEvent(BaseEvent.getEventName(event)));
+type TargetEvent = {
+  new (): BaseEvent;
+};
+
+export function Handler(targetEvent: TargetEvent) {
+  return applyDecorators(OnEvent(parseEventName(targetEvent.name)));
 }
