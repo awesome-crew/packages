@@ -1,6 +1,6 @@
 {
   "name": "@awesome-dev/typings",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "src/index.d.ts",
   "scripts": {
     "check:lint": "yarn run -T eslint \"{src,apps,libs,test}/**/*.ts\" --fix",

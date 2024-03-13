@@ -27,22 +27,26 @@ type SubtractOne<Value extends AvailableDepth> = Value extends 1
  * It will generate a string path for all properties of the object type.
  * it only goes to a maximum depth of given levels. default,max is 10.
  */
-export type PropertyStringPath<T, Prefix = '', MaxDepth extends AvailableDepth = 10> = T extends
-  | Primitive
-  | Array<Primitive>
+export type PropertyStringPath<
+  T,
+  Prefix = '',
+  MaxDepth extends AvailableDepth = 10,
+> = MaxDepth extends 0
   ? never
-  : T extends Array<any>
-    ? PropertyStringPath<T[0], Prefix, SubtractOne<MaxDepth>>
-    : {
-        [K in keyof T]: T[K] extends Primitive | Array<Primitive>
-          ? `${string & Prefix}${string & K}`
-          :
-              | `${string & Prefix}${string & K}`
-              | (MaxDepth extends 0
-                  ? never
-                  : PropertyStringPath<
-                      T[K],
-                      `${string & Prefix}${string & K}.`,
-                      SubtractOne<MaxDepth>
-                    >);
-      }[keyof T];
+  : T extends Primitive | Array<Primitive>
+    ? never
+    : T extends Array<any>
+      ? PropertyStringPath<T[0], Prefix, SubtractOne<MaxDepth>>
+      : {
+          [K in keyof T]: T[K] extends Primitive | Array<Primitive>
+            ? `${string & Prefix}${string & K}`
+            :
+                | `${string & Prefix}${string & K}`
+                | (MaxDepth extends 0
+                    ? never
+                    : PropertyStringPath<
+                        T[K],
+                        `${string & Prefix}${string & K}.`,
+                        SubtractOne<MaxDepth>
+                      >);
+        }[keyof T];
