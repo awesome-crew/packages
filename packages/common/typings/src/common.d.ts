@@ -9,3 +9,5 @@ export type Nilable<T> = Nullable<T> | undefined;
 export type StringKeyOf<T> = Extract<keyof T, string>;
 
 export type ArrayElementOf<ArrayType extends readonly unknown[]> = ArrayType[number];
+
+export type Primitive = string | number | bigint | boolean | undefined | symbol | Date;
