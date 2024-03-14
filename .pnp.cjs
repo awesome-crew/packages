@@ -18,6 +18,10 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:packages/common/jest"\
     },\
     {\
+      "name": "@awesome-dev/tosspayments",\
+      "reference": "workspace:packages/common/tosspayments"\
+    },\
+    {\
       "name": "@awesome-dev/typings",\
       "reference": "workspace:packages/common/typings"\
     },\
@@ -79,6 +83,7 @@ const RAW_RUNTIME_STATE =
     ["@awesome-dev/server-messageme", ["workspace:packages/server/messageme"]],\
     ["@awesome-dev/server-tosspayments", ["workspace:packages/server/tosspayments"]],\
     ["@awesome-dev/server-typeorm", ["virtual:23de94e3b62182955e09215e8ba73068f57c4552ffece876ef47af85a97f0cf754f3a836fbc1d49eb12fc70795bf196b1b9c30a398fcc0aeaa3d5d2eb40513aa#workspace:packages/server/typeorm", "virtual:4875840753fcefc2cb8b86ab8ca92094d094e9e146e33ec5b9cb8113260eb176f65e0ff8edb795620ab28af2d9ad8097e47fc23b75c88888e112b359953d7e1e#workspace:packages/server/typeorm", "virtual:934d85025402283e4befb48ca6d3d18d2e790b1b2c50e7e1421147592ed83f0cd9679a329c4a32b1ccf319a7b57b4895f42903d598a1d330b66280b08baaef9d#workspace:packages/server/typeorm", "workspace:packages/server/typeorm"]],\
+    ["@awesome-dev/tosspayments", ["workspace:packages/common/tosspayments"]],\
     ["@awesome-dev/typings", ["workspace:packages/common/typings"]],\
     ["@awesome-dev/utils", ["workspace:packages/common/utils"]],\
     ["@awesome-dev/web-admin", ["workspace:packages/web/admin"]],\
@@ -566,6 +571,21 @@ const RAW_RUNTIME_STATE =
           ["tsconfig-paths", "npm:4.2.0"],\
           ["typeorm", "virtual:736790cd7abab175d750c779681d95f24ffac8666c2815ae765f7f733a13fe2594fa2de1010c5ac0b7e493622c27a348ed391ccc7d1861478565cafdf50035bf#npm:0.3.20"],\
           ["yargs", "npm:17.7.2"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@awesome-dev/tosspayments", [\
+      ["workspace:packages/common/tosspayments", {\
+        "packageLocation": "./packages/common/tosspayments/",\
+        "packageDependencies": [\
+          ["@awesome-dev/tosspayments", "workspace:packages/common/tosspayments"],\
+          ["@awesome-dev/jest", "virtual:664b72fb9a5eaaf8740b8f3de380e8bcf5a4948040327de50095bdfb9caf6243ca1a3ebd45e341180ce179b3da7186422a8fb76bb369faf20ee9ada576ddd7d4#workspace:packages/common/jest"],\
+          ["@awesome-dev/typings", "workspace:packages/common/typings"],\
+          ["@awesome-dev/utils", "workspace:packages/common/utils"],\
+          ["@jest/globals", "npm:29.7.0"],\
+          ["axios", "npm:1.6.7"],\
+          ["ts-jest", "virtual:664b72fb9a5eaaf8740b8f3de380e8bcf5a4948040327de50095bdfb9caf6243ca1a3ebd45e341180ce179b3da7186422a8fb76bb369faf20ee9ada576ddd7d4#npm:29.1.2"]\
         ],\
         "linkType": "SOFT"\
       }]\

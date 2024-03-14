@@ -247,6 +247,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@awesome-dev/tosspayments@workspace:packages/common/tosspayments":
+  version: 0.0.0-use.local
+  resolution: "@awesome-dev/tosspayments@workspace:packages/common/tosspayments"
+  dependencies:
+    "@awesome-dev/jest": "workspace:^"
+    "@awesome-dev/typings": "workspace:^"
+    "@awesome-dev/utils": "workspace:^"
+    "@jest/globals": "npm:^29.7.0"
+    axios: "npm:^1.6.7"
+    ts-jest: "npm:^29.1.2"
+  languageName: unknown
+  linkType: soft
+
 "@awesome-dev/typings@workspace:^, @awesome-dev/typings@workspace:packages/common/typings":
   version: 0.0.0-use.local
   resolution: "@awesome-dev/typings@workspace:packages/common/typings"
