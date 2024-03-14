@@ -1,6 +1,5 @@
+import { TosspaymentsClient } from '@awesome-dev/tosspayments';
 import { Injectable } from '@nestjs/common';
-
-import { TosspaymentsClient } from './tosspayments.client';
 
 @Injectable()
 export class TosspaymentsService {

@@ -202,6 +202,7 @@ __metadata:
   dependencies:
     "@awesome-dev/jest": "workspace:^"
     "@awesome-dev/server-env": "workspace:^"
+    "@awesome-dev/tosspayments": "workspace:^"
     "@awesome-dev/typings": "workspace:^"
     "@jest/globals": "npm:^29.7.0"
     "@nestjs/common": "npm:^10.3.3"
@@ -247,7 +248,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@awesome-dev/tosspayments@workspace:packages/common/tosspayments":
+"@awesome-dev/tosspayments@workspace:^, @awesome-dev/tosspayments@workspace:packages/common/tosspayments":
   version: 0.0.0-use.local
   resolution: "@awesome-dev/tosspayments@workspace:packages/common/tosspayments"
   dependencies:

@@ -1,8 +1,8 @@
 import { loadEnv } from '@awesome-dev/server-env';
+import { TosspaymentsClient } from '@awesome-dev/tosspayments';
 import { DynamicModule, Module, Provider } from '@nestjs/common';
 
 import { TosspaymentsService } from './tosspayments.service';
-import { TosspaymentsClient } from './tosspayments.client';
 
 @Module({})
 export class TosspaymentsModule {
