@@ -13,9 +13,7 @@ export class AdminCommonController {
   @UseInterceptors(FilesInterceptor('files'))
   async upload(@UploadedFiles() files: Array<Express.Multer.File>): Promise<string[]> {
     const results = await Promise.all(
-      files.map(file =>
-        this.awsS3Service.uploadBuffer(file.buffer, file.originalname, file.mimetype)
-      )
+      files.map(file => this.awsS3Service.uploadBuffer(file.buffer, file.mimetype))
     );
 
     return results.map(result => result.url);
