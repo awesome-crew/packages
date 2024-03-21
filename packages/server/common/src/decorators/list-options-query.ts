@@ -44,6 +44,10 @@ export class ListOptions<Entity> {
   private _order?: { field: keyof Entity; direction: 'ASC' | 'DESC' };
   private _relations?: Relation<Entity>[];
 
+  static from<Entity = unknown>(existing: ListOptions<Entity>) {
+    return existing != null ? existing.copy() : new ListOptions<Entity>();
+  }
+
   static for(input: Record<string, unknown>) {
     return new ListOptions().where(input);
   }
@@ -86,6 +90,30 @@ export class ListOptions<Entity> {
       this._relations = (this._relations ?? []).concat(input);
     }
     return this;
+  }
+
+  copy(): ListOptions<Entity> {
+    const res = new ListOptions<Entity>();
+
+    if (this._where != null) {
+      res.where(this._where);
+    }
+
+    if (this._page != null) {
+      res.page({ limit: 20, ...this._page });
+    }
+
+    if (this._order != null) {
+      res.order(
+        `${this._order.direction === 'DESC' ? '-' : ''}${this._order.field.toString()}` as any
+      );
+    }
+
+    if (this._relations != null) {
+      res.relation(this._relations);
+    }
+
+    return res;
   }
 
   toFindOptions(): FindManyOptions<Entity> {
