@@ -44,7 +44,7 @@ export class ListOptions<Entity> {
   private _order?: { field: keyof Entity; direction: 'ASC' | 'DESC' };
   private _relations?: Relation<Entity>[];
 
-  static from<Entity = unknown>(existing: ListOptions<Entity>) {
+  static from<Entity = unknown>(existing?: ListOptions<Entity>) {
     return existing != null ? existing.copy() : new ListOptions<Entity>();
   }
 
