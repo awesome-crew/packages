@@ -363,3 +363,4 @@ email-dist/
 # types
 declarations.d.ts
 next-env.d.ts
+*storybook.log
