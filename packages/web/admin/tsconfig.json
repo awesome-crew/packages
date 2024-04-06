@@ -5,7 +5,9 @@
     "outDir": "./dist",
     "strictPropertyInitialization": false,
     "emitDecoratorMetadata": true,
-    "declaration": true
+    "declaration": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react"
   },
   "include": ["src"]
 }

@@ -10,21 +10,45 @@
     "check": "yarn run -T run-p 'check:*'",
     "build": "yarn run -T rimraf -rf dist && yarn run -T tsc -p tsconfig.json",
     "prepublish:npm": "yarn check && yarn build",
-    "publish:npm": "yarn npm publish"
+    "publish:npm": "yarn npm publish",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.2.25",
     "@emotion/react": "^11.11.4",
+    "@storybook/addon-essentials": "^8.0.5",
+    "@storybook/addon-interactions": "^8.0.5",
+    "@storybook/addon-links": "^8.0.5",
+    "@storybook/addon-onboarding": "^8.0.5",
+    "@storybook/blocks": "^8.0.5",
+    "@storybook/react": "^8.0.5",
+    "@storybook/react-vite": "^8.0.5",
+    "@storybook/test": "^8.0.5",
     "@types/node": "^20.11.24",
+    "@types/prop-types": "^15",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18",
-    "next": "^14.1.1",
+    "@types/react-helmet": "^6",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "storybook": "^8.0.5",
+    "vite": "^5.2.7"
   },
   "dependencies": {
-    "@toss/emotion-utils": "^1.1.12"
+    "@awesome-dev/enum": "workspace:^",
+    "@toss/emotion-utils": "^1.1.12",
+    "lucide-react": "^0.365.0",
+    "react-helmet": "^6.1.0",
+    "ts-pattern": "^5.0.8"
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11.11.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
