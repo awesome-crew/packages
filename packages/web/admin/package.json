@@ -12,7 +12,8 @@
     "prepublish:npm": "yarn check && yarn build",
     "publish:npm": "yarn npm publish",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "deploy-storybook": "yarn build-storybook && cd storybook-static && vercel --prod"
   },
   "publishConfig": {
     "access": "public"
