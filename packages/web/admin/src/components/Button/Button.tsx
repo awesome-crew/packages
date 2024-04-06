@@ -2,36 +2,33 @@ import {
   ButtonHTMLAttributes,
   ComponentProps,
   ReactElement,
+  ReactNode,
   createContext,
   useContext,
 } from 'react';
-import { AddAsProp } from '../../types/AddAsProp';
 import { ButtonSize, ButtonType } from './types';
 import { Stack, padding } from '@toss/emotion-utils';
 import { match } from 'ts-pattern';
-import { HTMLElementName } from '../../types/HTMLElementName';
 import { colors } from '../../constants/colors';
 import { Icon } from '../Icon';
 
 type ButtonElementProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
-export type ButtonProps<Element extends HTMLElementName> = AddAsProp<
-  {
-    type?: ButtonType;
-    size?: ButtonSize;
-    htmlType?: ButtonElementProps['type'];
-    leftAddon?: ReactElement;
-    rightAddon?: ReactElement;
-  },
-  Element
->;
+export type ButtonProps = {
+  type?: ButtonType;
+  size?: ButtonSize;
+  htmlType?: ButtonElementProps['type'];
+  leftAddon?: ReactElement;
+  rightAddon?: ReactElement;
+  children: ReactNode;
+};
 
-const ButtonContext = createContext<Required<Pick<ButtonProps<'button'>, 'type' | 'size'>>>({
+const ButtonContext = createContext<Required<Pick<ButtonProps, 'type' | 'size'>>>({
   type: ButtonType.default,
   size: ButtonSize.default,
 });
 
-export function Button<Element extends HTMLElementName = 'button'>({
+export function Button({
   type = ButtonType.default,
   size = ButtonSize.default,
   htmlType = 'button',
@@ -39,8 +36,8 @@ export function Button<Element extends HTMLElementName = 'button'>({
   rightAddon,
   children,
   ...props
-}: ButtonProps<Element>) {
-  const { backgroundColor, color } = getButtonTypeStyle(type);
+}: ButtonProps) {
+  const { backgroundColor, hoverBackgroundColor, color } = getButtonTypeStyle(type);
   const { gutter, height, paddingX, fontSize, fontWeight } = getButtonSizeStyle(size);
 
   return (
@@ -48,12 +45,19 @@ export function Button<Element extends HTMLElementName = 'button'>({
       <Stack.Horizontal
         align="center"
         css={[
-          { backgroundColor, height },
+          { backgroundColor, height, ['&: hover']: { backgroundColor: hoverBackgroundColor } },
           padding({ x: paddingX }),
-          { borderRadius: 5, width: 'fit-content' },
+          {
+            borderRadius: 5,
+            width: 'fit-content',
+            outline: 'none',
+            border: 'none',
+            transition: 'background-color 0.2s',
+          },
         ]}
         gutter={gutter}
         type={htmlType}
+        as="button"
         {...props}
       >
         {leftAddon}
@@ -68,11 +72,24 @@ function getButtonTypeStyle(type: ButtonType) {
   return match(type)
     .with(ButtonType.default, () => ({
       backgroundColor: colors.greyAlpha50,
+      hoverBackgroundColor: colors.greyAlpha100,
       color: colors.grey500,
     }))
-    .with(ButtonType.primary, () => ({ backgroundColor: colors.blue500, color: colors.white }))
-    .with(ButtonType.secondary, () => ({ backgroundColor: colors.blue50, color: colors.blue500 }))
-    .with(ButtonType.danger, () => ({ backgroundColor: colors.red50, color: colors.red500 }))
+    .with(ButtonType.primary, () => ({
+      backgroundColor: colors.blue500,
+      hoverBackgroundColor: colors.blue600,
+      color: colors.white,
+    }))
+    .with(ButtonType.secondary, () => ({
+      backgroundColor: colors.blue50,
+      hoverBackgroundColor: colors.blue100,
+      color: colors.blue500,
+    }))
+    .with(ButtonType.danger, () => ({
+      backgroundColor: colors.red50,
+      hoverBackgroundColor: colors.red100,
+      color: colors.red500,
+    }))
     .exhaustive();
 }
 function getButtonSizeStyle(size: ButtonSize) {
