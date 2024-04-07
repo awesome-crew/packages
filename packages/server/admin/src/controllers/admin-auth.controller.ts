@@ -3,6 +3,10 @@ import { Request } from 'express';
 
 import { AdminAuthService } from '../providers';
 
+/**
+ * path는 '/admin/auth'로 설정된다.
+ * 어드민 로그인 API를 제공한다.
+ */
 @Controller('/admin/auth')
 export class AdminAuthController {
   constructor(private readonly authService: AdminAuthService) {}

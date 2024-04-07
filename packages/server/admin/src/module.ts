@@ -9,12 +9,18 @@ import { AdminConfig } from './config';
 @Module({})
 export class AwesomeAdminModule {
   static forRoot(): DynamicModule {
+    /**
+     * process.env의 환경변수를 가져옵니다.
+     */
     const config = loadEnv([
       'ADMIN_USER_ID',
       'ADMIN_USER_PASSWORD',
       'ADMIN_JWT_SECRET_KEY',
     ] as const);
 
+    /**
+     * AdminConfig 인스턴스를 생성합니다.
+     */
     const ConfigProvider: Provider = {
       provide: AdminConfig,
       useFactory: () =>
