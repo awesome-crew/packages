@@ -8,6 +8,11 @@ import {
 import { PartialDeep } from '@awesome-dev/typings';
 import { Body, Delete, Get, Param, ParseIntPipe, Patch, Post, Query } from '@nestjs/common';
 
+/**
+ * path는 '/admin/${toKebabCase(entityName)}s'으로 설정된다.
+ * AdminController 데코레이터를 사용한 컨트롤러는 이 클래스를 상속받아야 한다.
+ * AdminController 데코레이터를 사용한 컨트롤러는 CRUD와 entity의 개수를 가져오는 API를 자동으로 생성한다.
+ */
 export abstract class BaseAdminController<Entity extends BaseIdEntity> {
   constructor(protected readonly service: BaseService<Entity>) {}
 

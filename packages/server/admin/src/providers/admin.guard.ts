@@ -4,6 +4,9 @@ import { Observable } from 'rxjs';
 
 import { AdminAuthService } from './admin-auth.service';
 
+/**
+ * 어드민 권한이 있는지 확인합니다.
+ */
 @Injectable()
 export class AdminGuard implements CanActivate {
   constructor(private readonly authService: AdminAuthService) {}
