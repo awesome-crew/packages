@@ -7,6 +7,10 @@ import {
 import { PartialDeep } from '@awesome-dev/typings';
 import { ApiProperty } from '@nestjs/swagger';
 
+/**
+ * BaseIdEntity를 상속받아 Entity를 생성할 수 있습니다.
+ * id, createdAt, updatedAt를 기본으로 가지고 있습니다.
+ */
 export class BaseIdEntity extends TypeORMBaseEntity {
   constructor(attrs?: PartialDeep<BaseIdEntity>) {
     super();
