@@ -27,6 +27,9 @@ const parseValue = (value: unknown) => {
   return value;
 };
 
+/**
+ * 필터링을 위한 파싱 함수
+ */
 export const parseFilter = (filter: unknown) => {
   const relations: string[] = [];
 
@@ -130,6 +133,11 @@ export const parseFilter = (filter: unknown) => {
   };
 };
 
+/**
+ * 페이지네이션을 위한 파싱 함수
+ * offset: 시작점
+ * limit: 가져올 개수
+ */
 export const parsePaginator = (offset: number, limit: number) => {
   if (offset === undefined && limit === undefined) {
     return null;
@@ -141,6 +149,9 @@ export const parsePaginator = (offset: number, limit: number) => {
   return { skip: Number(offset), take: Number(limit) };
 };
 
+/**
+ * 정렬을 위한 파싱 함수
+ */
 export const parseSorter = (order: string) => {
   if (order === undefined) {
     return null;

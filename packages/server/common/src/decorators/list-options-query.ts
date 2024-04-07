@@ -3,6 +3,10 @@ import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 
 import { parseFilter } from '../helpers';
 
+/**
+ * ListOptionsQuery 데코레이터는 ListOptions를 가져오는 데코레이터입니다.
+ * exclude는 제외할 필드를, acceptRelations은 relations의 사용 여부를 설정합니다.
+ */
 export const ListOptionsQuery = <Entity>(options?: {
   excludes?: string[];
   acceptRelations?: boolean;
@@ -35,6 +39,11 @@ export const ListOptionsQuery = <Entity>(options?: {
 
 export type Relation<Entity> = keyof Entity | `${string & keyof Entity}.${string}`;
 
+/**
+ * ListOptions는 Entity 목록을 가져오는 데 사용되는 옵션입니다.
+ * where는 검색 조건을, page는 페이지네이션을, order는 정렬을, relations는 연결된 Entity를 가져올 때 사용할 Relation을 설정합니다.
+ * ListOptionsQuery 데코레이터를 사용하여 ListOptions를 가져올 수 있습니다.
+ */
 export class ListOptions<Entity> {
   private _where?: Record<string, unknown>;
   private _page?: {
@@ -44,10 +53,16 @@ export class ListOptions<Entity> {
   private _order?: { field: keyof Entity; direction: 'ASC' | 'DESC' };
   private _relations?: Relation<Entity>[];
 
+  /**
+   * 기존 ListOptions를 복사합니다.
+   */
   static from<Entity = unknown>(existing?: ListOptions<Entity>) {
     return existing != null ? existing.copy() : new ListOptions<Entity>();
   }
 
+  /**
+   * 검색 조건을 설정합니다.
+   */
   static for(input: Record<string, unknown>) {
     return new ListOptions().where(input);
   }

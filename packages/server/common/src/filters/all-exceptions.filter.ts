@@ -11,6 +11,12 @@ import { HttpAdapterHost } from '@nestjs/core';
 
 import { BaseException } from '../exceptions';
 
+/**
+ * 모든 예외를 처리하는 필터.
+ * BaseException을 상속받은 예외는 BaseException의 handle 메서드를 호출합니다.
+ * NotFoundException는 ENDPOINT_NOT_FOUND 예외로 처리합니다.
+ * 그 외의 예외는 UNKNOWN 예외로 처리합니다.
+ */
 @Catch()
 export class AllExceptionsFilter implements ExceptionFilter {
   constructor(private readonly httpAdapterHost: HttpAdapterHost) {}

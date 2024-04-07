@@ -1,5 +1,8 @@
 import { format, utcToZonedTime } from 'date-fns-tz';
 
+/**
+ * 서울 시간대로 날짜를 포맷합니다.
+ */
 export const formatSeoulDate = (pattern: string, date = new Date()): string => {
   const timeZone = 'Asia/Seoul';
   const zonedDate = utcToZonedTime(date, timeZone);
